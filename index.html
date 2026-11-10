@@ -94,6 +94,57 @@
       background: linear-gradient(90deg, var(--gold), var(--gold-light));
       animation: loadFill 2s ease forwards;
     }
+    /* iPhone and small-screen envelope fix */
+#invite-card {
+    box-sizing: border-box;
+    width: 85%;
+    max-width: 420px;
+    padding: 12px 10px;
+}
+
+#invite-card > p:first-child {
+    font-size: clamp(9px, 2.5vw, 12px);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    white-space: normal;
+    overflow-wrap: break-word;
+    margin: 0;
+}
+
+.guest-envelope-name {
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    margin: 10px 0;
+}
+
+.guest-envelope-name strong {
+    font-size: clamp(16px, 4vw, 19px);
+    display: inline-block;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+}
+
+#invite-card h2 {
+    font-size: clamp(23px, 6vw, 29px);
+    line-height: 1.2;
+}
+
+#invite-card p {
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 430px) {
+    #invite-card {
+        padding: 10px 8px;
+    }
+
+    #invite-card > p:first-child {
+        letter-spacing: 0.05em;
+    }
+}
 
     @keyframes loadFill {
       from {
@@ -1263,6 +1314,61 @@ box-shadow:none;
         width: 100%;
       }
     }
+    /* iPhone loading screen alignment fix */
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+#loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    box-sizing: border-box;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#loader .loader-om {
+    max-width: 100%;
+    text-align: center;
+}
+
+#loader .loader-text {
+    max-width: calc(100% - 32px);
+    text-align: center;
+    letter-spacing: clamp(0.12em, 2vw, 0.4em);
+    overflow-wrap: break-word;
+}
+
+#loader .loader-bar {
+    width: min(200px, calc(100% - 48px));
+    max-width: 100%;
+}
+
+/* Small iPhones */
+@media screen and (max-width: 430px) {
+    #loader {
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+    }
+}
 
     .timeline-item:nth-child(odd) .timeline-content {
       margin-right: 5%;
@@ -2162,7 +2268,7 @@ box-shadow:none;
         <div class="venue-actions">
           <a class="venue-btn primary" href="https://maps.app.goo.gl/sz92CaM2A2btChvN6" target="_blank">🗺 Get Directions</a>
           <button class="venue-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
-          <a class="venue-btn" href="tel:+919892505096">📞 Call</a>
+          <a class="venue-btn" href="tel:+918655974611">📞 Call</a>
         </div>
       </div>
     </div>
