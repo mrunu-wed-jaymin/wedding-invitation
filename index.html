@@ -1913,6 +1913,37 @@ body {
       text-align: center;
       margin: 1rem 0;
     }
+    /* RSVP button - iPhone responsive fix */
+.rsvp-btn {
+    display: block;
+    box-sizing: border-box;
+
+    width: min(100%, 340px);
+    max-width: 100%;
+
+    padding: 14px 10px;
+    margin: 0 auto;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(13px, 3.5vw, 16px);
+
+    letter-spacing: clamp(0.05em, 1.5vw, 0.2em);
+    line-height: 1.5;
+
+    text-align: center;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+@media screen and (max-width: 430px) {
+    .rsvp-btn {
+        width: calc(100% - 20px);
+        padding: 12px 8px;
+        letter-spacing: 0.06em;
+        font-size: 14px;
+    }
+}
   </style>
 </head>
 
