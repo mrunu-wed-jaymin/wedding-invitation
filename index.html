@@ -26,13 +26,14 @@
       --text-dark: #3A1A0A;
       --text-mid: #6B3A2A;
     }
-    #engagement-event {
-    display: none;
-}
 
-#engagement-event.show-engagement {
-    display: block;
-}
+    #engagement-event {
+      display: none;
+    }
+
+    #engagement-event.show-engagement {
+      display: block;
+    }
 
     * {
       margin: 0;
@@ -94,130 +95,7 @@
       background: linear-gradient(90deg, var(--gold), var(--gold-light));
       animation: loadFill 2s ease forwards;
     }
-  
-    /* =====================================
-   INVITATION CARD - RESPONSIVE IPHONE FIX
-===================================== */
 
-#invite-card {
-    position: absolute;
-
-    left: 50%;
-    bottom: 50%;
-
-    width: 82%;
-    max-width: 380px;
-
-    box-sizing: border-box;
-
-    padding: 16px 12px;
-
-    background: linear-gradient(
-        145deg,
-        #FFF8F0,
-        #FFF0E0
-    );
-
-    border: 1px solid rgba(201, 168, 76, 0.5);
-    border-radius: 6px;
-
-    text-align: center;
-
-    opacity: 0;
-
-    transform: translate(-50%, 100%);
-
-    transition:
-        transform 1.2s cubic-bezier(0.2, 0.8, 0.3, 1),
-        opacity 1s ease;
-
-    box-shadow: 0 10px 40px rgba(201, 168, 76, 0.3);
-
-    z-index: 3;
-
-    overflow: visible;
-}
-
-/* Card rising animation */
-
-/* #invite-card.rising {
-    transform: translate(-50%, 35%);
-    opacity: 1;
-} */
-
-/* Divine blessing text */
-
-#invite-card > p:first-child {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(9px, 2.8vw, 12px);
-    letter-spacing: 0.07em;
-    line-height: 1.5;
-    white-space: normal;
-}
-
-/* Guest name */
-
-.guest-envelope-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 14px;
-    letter-spacing: 0.07em;
-    line-height: 1.5;
-    margin: 10px 0;
-    overflow-wrap: anywhere;
-}
-
-/* Couple names */
-
-#invite-card h2 {
-    font-family: 'Dancing Script', cursive;
-    font-size: clamp(21px, 6vw, 29px);
-    line-height: 1.3;
-    margin: 8px 0;
-}
-
-/* Date and other text */
-
-#invite-card p {
-    overflow-wrap: break-word;
-    line-height: 1.5;
-}
-
-/* iPhone optimization */
-
-@media screen and (max-width: 430px) {
-
-    .envelope-wrapper {
-        width: 88vw;
-        max-width: 380px;
-    }
-
-    .envelope-body {
-        aspect-ratio: 1.4 / 1;
-    }
-
-    #invite-card {
-        width: 84%;
-        padding: 12px 8px;
-    }
-
-    #invite-card.rising {
-        transform: translate(-50%, 35%);
-    }
-
-    #invite-card > p:first-child {
-        font-size: 10px;
-        letter-spacing: 0.04em;
-    }
-
-    .guest-envelope-name {
-        font-size: 12px;
-        letter-spacing: 0.04em;
-    }
-
-    #invite-card h2 {
-        font-size: 23px;
-    }
-}
     /* SCROLL PROGRESS */
     #progress-bar {
       position: fixed;
@@ -265,83 +143,65 @@
       overflow: hidden;
     }
 
-    .petal{
-  position:absolute;
+    .petal {
+      position: absolute;
 
-  top:-10vh;
+      top: -10vh;
 
-  pointer-events:none;
+      pointer-events: none;
 
-  user-select:none;
+      user-select: none;
 
-  will-change:transform;
+      will-change: transform;
 
-  animation: cinematicPetal linear infinite;
+      animation: cinematicPetal linear infinite;
 
-  transform-style:preserve-3d;
-}
+      transform-style: preserve-3d;
+    }
 
-@keyframes cinematicPetal{
+    @keyframes cinematicPetal {
 
-  0%{
-    transform:
-      translate3d(0,-10vh,0)
-      rotate(0deg)
-      scale(0.7);
+      0% {
+        transform:
+          translate3d(0, -10vh, 0) rotate(0deg) scale(0.7);
 
-    opacity:0;
-  }
+        opacity: 0;
+      }
 
-  10%{
-    opacity:1;
-  }
+      10% {
+        opacity: 1;
+      }
 
-  25%{
-    transform:
-      translate3d(
-        calc(var(--drift) * 0.3),
-        25vh,
-        0
-      )
-      rotate(calc(var(--rotate) * 0.25))
-      scale(1);
-  }
+      25% {
+        transform:
+          translate3d(calc(var(--drift) * 0.3),
+            25vh,
+            0) rotate(calc(var(--rotate) * 0.25)) scale(1);
+      }
 
-  50%{
-    transform:
-      translate3d(
-        calc(var(--drift) * -0.4),
-        55vh,
-        0
-      )
-      rotate(calc(var(--rotate) * 0.5))
-      scale(1.1);
-  }
+      50% {
+        transform:
+          translate3d(calc(var(--drift) * -0.4),
+            55vh,
+            0) rotate(calc(var(--rotate) * 0.5)) scale(1.1);
+      }
 
-  75%{
-    transform:
-      translate3d(
-        calc(var(--drift) * 0.6),
-        80vh,
-        0
-      )
-      rotate(calc(var(--rotate) * 0.8))
-      scale(0.95);
-  }
+      75% {
+        transform:
+          translate3d(calc(var(--drift) * 0.6),
+            80vh,
+            0) rotate(calc(var(--rotate) * 0.8)) scale(0.95);
+      }
 
-  100%{
-    transform:
-      translate3d(
-        var(--drift),
-        120vh,
-        0
-      )
-      rotate(var(--rotate))
-      scale(0.8);
+      100% {
+        transform:
+          translate3d(var(--drift),
+            120vh,
+            0) rotate(var(--rotate)) scale(0.8);
 
-    opacity:0;
-  }
-}
+        opacity: 0;
+      }
+    }
 
     /* SECTION BASE */
     section {
@@ -604,33 +464,33 @@
     }
 
     /* MANDAP HERO */
-   #mandap-section{
+    #mandap-section {
 
-min-height:100vh;
+      min-height: 100vh;
 
-position:relative;
+      position: relative;
 
-overflow:hidden;
+      overflow: hidden;
 
-display:flex;
+      display: flex;
 
-align-items:center;
+      align-items: center;
 
-justify-content:center;
+      justify-content: center;
 
-padding:2rem;
+      padding: 2rem;
 
-background-color:#f4efe7;
+      background-color: #f4efe7;
 
-background-image:url("invitationCard.png");
+      background-image: url("invitationCard.png");
 
-background-repeat:no-repeat;
+      background-repeat: no-repeat;
 
-background-position:center center;
+      background-position: center center;
 
-background-size:contain;
+      background-size: contain;
 
-}
+    }
 
 
 
@@ -655,18 +515,19 @@ background-size:contain;
         transform: scale(1.08);
       }
     }
-    #mandap-section::before{
 
-content:'';
+    #mandap-section::before {
 
-position:absolute;
+      content: '';
 
-inset:0;
+      position: absolute;
 
-background:
-rgba(255,248,240,0.35);
+      inset: 0;
 
-}
+      background:
+        rgba(255, 248, 240, 0.35);
+
+    }
 
 
     .sunrays {
@@ -702,25 +563,25 @@ rgba(255,248,240,0.35);
 
     /* Hero text with strong text shadow for readability over image */
     /* Hero text with strong text shadow for readability over image */
-    .hero-content{
+    .hero-content {
 
-position:relative;
+      position: relative;
 
-z-index:20;
+      z-index: 20;
 
-max-width:850px;
+      max-width: 850px;
 
-text-align:center;
+      text-align: center;
 
-padding:2rem;
+      padding: 2rem;
 
-background:transparent;
+      background: transparent;
 
-border:none;
+      border: none;
 
-box-shadow:none;
+      box-shadow: none;
 
-}
+    }
 
 
     /* luxury glow overlay */
@@ -1354,61 +1215,62 @@ box-shadow:none;
         width: 100%;
       }
     }
+
     /* iPhone loading screen alignment fix */
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
-#loader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-
-    width: 100%;
-    max-width: 100%;
-    height: 100vh;
-    height: 100dvh;
-
-    box-sizing: border-box;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-#loader .loader-om {
-    max-width: 100%;
-    text-align: center;
-}
-
-#loader .loader-text {
-    max-width: calc(100% - 32px);
-    text-align: center;
-    letter-spacing: clamp(0.12em, 2vw, 0.4em);
-    overflow-wrap: break-word;
-}
-
-#loader .loader-bar {
-    width: min(200px, calc(100% - 48px));
-    max-width: 100%;
-}
-
-/* Small iPhones */
-@media screen and (max-width: 430px) {
     #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 100%;
+      max-width: 100%;
+      height: 100vh;
+      height: 100dvh;
+
+      box-sizing: border-box;
+      overflow: hidden;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #loader .loader-om {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    #loader .loader-text {
+      max-width: calc(100% - 32px);
+      text-align: center;
+      letter-spacing: clamp(0.12em, 2vw, 0.4em);
+      overflow-wrap: break-word;
+    }
+
+    #loader .loader-bar {
+      width: min(200px, calc(100% - 48px));
+      max-width: 100%;
+    }
+
+    /* Small iPhones */
+    @media screen and (max-width: 430px) {
+      #loader {
         width: 100%;
         height: 100vh;
         height: 100dvh;
+      }
     }
-}
 
     .timeline-item:nth-child(odd) .timeline-content {
       margin-right: 5%;
@@ -1953,85 +1815,93 @@ body {
       text-align: center;
       margin: 1rem 0;
     }
+
     /* RSVP button - iPhone responsive fix */
-.rsvp-btn {
-    display: block;
-    box-sizing: border-box;
-
-    width: min(100%, 340px);
-    max-width: 100%;
-
-    padding: 14px 10px;
-    margin: 0 auto;
-
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(13px, 3.5vw, 16px);
-
-    letter-spacing: clamp(0.05em, 1.5vw, 0.2em);
-    line-height: 1.5;
-
-    text-align: center;
-    white-space: normal;
-    overflow-wrap: break-word;
-    word-break: normal;
-}
-
-@media screen and (max-width: 430px) {
     .rsvp-btn {
+      display: block;
+      box-sizing: border-box;
+
+      width: min(100%, 340px);
+      max-width: 100%;
+
+      padding: 14px 10px;
+      margin: 0 auto;
+
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(13px, 3.5vw, 16px);
+
+      letter-spacing: clamp(0.05em, 1.5vw, 0.2em);
+      line-height: 1.5;
+
+      text-align: center;
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: normal;
+    }
+
+    @media screen and (max-width: 430px) {
+      .rsvp-btn {
         width: calc(100% - 20px);
         padding: 12px 8px;
         letter-spacing: 0.06em;
         font-size: 14px;
+      }
     }
-}
-/* ===== INVITE CARD: final centered fix ===== */
-#invite-card {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  bottom: auto;
-  width: 86%;
-  max-width: 380px;
-  box-sizing: border-box;
-  padding: 14px 10px;
-  opacity: 0;
-  transform: translate(-50%, -20%);   /* starts slightly low, rises into center */
-  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 1s ease;
-}
 
-#invite-card.rising {
-  transform: translate(-50%, -50%);   /* true center, any card height */
-  opacity: 1;
-}
+    /* ===== INVITE CARD: final centered fix ===== */
+    #invite-card {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      bottom: auto;
+      width: 86%;
+      max-width: 380px;
+      box-sizing: border-box;
+      padding: 14px 10px;
+      opacity: 0;
+      transform: translate(-50%, -20%);
+      /* starts slightly low, rises into center */
+      transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 1s ease;
+    }
 
-#invite-card > p:first-child {
-  font-size: clamp(8px, 2.6vw, 12px);
-  letter-spacing: 0.08em;
-  padding-left: 0.08em;               /* balances trailing letter-spacing so it looks centered */
-  white-space: normal;
-}
+    #invite-card.rising {
+      transform: translate(-50%, -50%);
+      /* true center, any card height */
+      opacity: 1;
+    }
 
-.guest-envelope-name {
-  font-size: clamp(11px, 3.4vw, 14px);
-  letter-spacing: 0.05em;
-  margin: 8px 0;
-  overflow-wrap: anywhere;
-}
+    #invite-card>p:first-child {
+      font-size: clamp(8px, 2.6vw, 12px);
+      letter-spacing: 0.08em;
+      padding-left: 0.08em;
+      /* balances trailing letter-spacing so it looks centered */
+      white-space: normal;
+    }
 
-#invite-card h2 {
-  font-size: clamp(20px, 6vw, 28px);
-  margin: 6px 0;
-}
+    .guest-envelope-name {
+      font-size: clamp(11px, 3.4vw, 14px);
+      letter-spacing: 0.05em;
+      margin: 8px 0;
+      overflow-wrap: anywhere;
+    }
 
-@media screen and (max-width: 430px) {
-  .envelope-body {
-    aspect-ratio: auto;
-    min-height: 260px;                /* gives room for the extra guest-name lines */
-  }
-  #invite-card.rising {
-    transform: translate(-50%, -50%); /* overrides the old 35% rule */
-  }
-}
+    #invite-card h2 {
+      font-size: clamp(20px, 6vw, 28px);
+      margin: 6px 0;
+    }
+
+    @media screen and (max-width: 430px) {
+      .envelope-body {
+        aspect-ratio: auto;
+        min-height: 260px;
+        /* gives room for the extra guest-name lines */
+      }
+
+      #invite-card.rising {
+        transform: translate(-50%, -50%);
+        /* overrides the old 35% rule */
+      }
+    }
   </style>
 </head>
 
@@ -2049,8 +1919,8 @@ body {
   <div id="progress-bar"></div>
   <div class="petal-container" id="petals"></div>
   <button id="music-btn" title="Toggle Music">🎵</button>
-  
-    <audio id="wedding-music" loop preload="none"></audio>
+
+  <audio id="wedding-music" loop preload="none"></audio>
 
 
   <!-- ENVELOPE -->
@@ -2203,7 +2073,8 @@ body {
           <div class="timeline-icon">🌹</div>
           <div class="timeline-year">September 2019</div>
           <div class="timeline-title">The Proposal</div>
-          <p class="timeline-desc">Against the backdrop of a thousand lanterns floating into the night sky, Mrunmayi asked
+          <p class="timeline-desc">Against the backdrop of a thousand lanterns floating into the night sky, Mrunmayi
+            asked
             Jaymin to be her forever. He said yes before she finished the question.</p>
         </div>
       </div>
@@ -2236,7 +2107,7 @@ body {
     <h2 class="section-title reveal reveal-delay-1">Wedding <span>Events</span></h2>
     <div class="section-subtitle reveal reveal-delay-2">JOIN US FOR EVERY JOYFUL MOMENT</div>
     <div class="events-grid">
-       <!-- <div class="event-card reveal ">
+      <!-- <div class="event-card reveal ">
         <span class="event-icon">💍</span>
         <div class="event-name">Engagement Ceremony</div>
         <div class="event-date">December 20, 2026</div>
@@ -2244,14 +2115,14 @@ body {
         <div class="event-venue">📍Zaika, Bhayander west, Maharashtra</div>
       </div> -->
       <div class="event-card reveal" id="engagement-event">
-    <span class="event-icon">💍</span>
-    <div class="event-name">Engagement Ceremony</div>
-    <div class="event-date">December 20, 2026</div>
-    <div class="event-time">⏰ 7:00 PM – 10:00 PM</div>
-    <div class="event-venue">
-        📍 Zaika, Bhayander west, Maharashtra
-    </div>
-</div>
+        <span class="event-icon">💍</span>
+        <div class="event-name">Engagement Ceremony</div>
+        <div class="event-date">December 20, 2026</div>
+        <div class="event-time">⏰ 7:00 PM – 10:00 PM</div>
+        <div class="event-venue">
+          📍 Zaika, Bhayander west, Maharashtra
+        </div>
+      </div>
       <!-- <div class="event-card reveal reveal-delay-1">
         <span class="event-icon">🌼</span>
         <div class="event-name">Haldi Ceremony</div>
@@ -2329,12 +2200,12 @@ body {
       <div class="ornament" style="margin-bottom: 1.5rem;">✦ ❋ ✦</div>
       <!-- Replace the href below with your actual Google Form link -->
       <!-- <a class="rsvp-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfzJPy18RQCo_JgxnjaVc240By4WxmzdVVdt599pucrG4e7yQ/viewform?usp=publish-editor" target="_blank" rel="noopener"> -->
-      <a class="rsvp-btn" id="rsvp-btn" href="#" target="_blank" rel="noopener">  
+      <a class="rsvp-btn" id="rsvp-btn" href="#" target="_blank" rel="noopener">
         ✦ &nbsp; RSVP — FILL OUR FORM &nbsp; ✦
       </a>
       <p
         style="margin-top:1.5rem; font-family:'Cormorant Garamond',serif; font-size:0.8rem; color:var(--text-mid); letter-spacing:0.15em; opacity:0.7;">
-        For queries: Shantaram Narsule: +91 97699 25727 <br> Jayesh Mewada: +91 98925 05096 
+        For queries: Shantaram Narsule: +91 97699 25727 <br> Jayesh Mewada: +91 98925 05096
       </p>
     </div>
   </section>
@@ -2347,8 +2218,7 @@ body {
     <div class="venue-inner">
       <div class="venue-map reveal">
         <div style="font-size:4rem;position:relative;z-index:1;"></div>
-        <iframe
-          src="https://www.google.com/maps?q=19.2922975,72.8716108&output=embed"
+        <iframe src="https://www.google.com/maps?q=19.2922975,72.8716108&output=embed"
           style="position:absolute;inset:0;width:100%;height:100%;border:none;" allowfullscreen loading="lazy">
         </iframe>
       </div>
@@ -2385,7 +2255,8 @@ body {
           </div>
         </div>
         <div class="venue-actions">
-          <a class="venue-btn primary" href="https://maps.app.goo.gl/sz92CaM2A2btChvN6" target="_blank">🗺 Get Directions</a>
+          <a class="venue-btn primary" href="https://maps.app.goo.gl/sz92CaM2A2btChvN6" target="_blank">🗺 Get
+            Directions</a>
           <button class="venue-btn" onclick="addToCalendar()">📅 Add to Calendar</button>
           <a class="venue-btn" href="tel:+918655974611">📞 Call</a>
         </div>
@@ -2422,115 +2293,115 @@ body {
     // PETALS — stop after 60 seconds
     function initPetals() {
 
-  const container = document.getElementById('petals');
+      const container = document.getElementById('petals');
 
-  const petals = ['🌸','🌺'];
+      const petals = ['🌸', '🌺'];
 
-  const luxuryParticles = ['✨','❋'];
+      const luxuryParticles = ['✨', '❋'];
 
-  const totalPetals = 30;
+      const totalPetals = 30;
 
-  for (let i = 0; i < totalPetals; i++) {
+      for (let i = 0; i < totalPetals; i++) {
 
-    const petal = document.createElement('div');
+        const petal = document.createElement('div');
 
-    petal.className = 'petal';
+        petal.className = 'petal';
 
-    // Mix petals + sparkles
-    const useLuxury =
-      Math.random() > 0.82;
+        // Mix petals + sparkles
+        const useLuxury =
+          Math.random() > 0.82;
 
-    petal.innerHTML =
-      useLuxury
-      ? luxuryParticles[Math.floor(Math.random()*luxuryParticles.length)]
-      : petals[Math.floor(Math.random()*petals.length)];
+        petal.innerHTML =
+          useLuxury
+            ? luxuryParticles[Math.floor(Math.random() * luxuryParticles.length)]
+            : petals[Math.floor(Math.random() * petals.length)];
 
-    // Random position
-    petal.style.left =
-      Math.random() * 100 + 'vw';
+        // Random position
+        petal.style.left =
+          Math.random() * 100 + 'vw';
 
-    // Random size
-    const size =
-      0.7 + Math.random() * 1.8;
+        // Random size
+        const size =
+          0.7 + Math.random() * 1.8;
 
-    petal.style.fontSize =
-      size + 'rem';
+        petal.style.fontSize =
+          size + 'rem';
 
-    // Duration
-    const duration =
-      8 + Math.random() * 10;
+        // Duration
+        const duration =
+          8 + Math.random() * 10;
 
-    petal.style.animationDuration =
-      duration + 's';
+        petal.style.animationDuration =
+          duration + 's';
 
-    // Delay
-    petal.style.animationDelay =
-      Math.random() * 10 + 's';
+        // Delay
+        petal.style.animationDelay =
+          Math.random() * 10 + 's';
 
-    // Opacity
-    petal.style.opacity =
-      0.25 + Math.random() * 0.7;
+        // Opacity
+        petal.style.opacity =
+          0.25 + Math.random() * 0.7;
 
-    // Blur depth effect
-    const blur =
-      Math.random() * 2.5;
+        // Blur depth effect
+        const blur =
+          Math.random() * 2.5;
 
-    petal.style.filter =
-      `blur(${blur}px) drop-shadow(0 0 8px rgba(255,215,120,0.35))`;
+        petal.style.filter =
+          `blur(${blur}px) drop-shadow(0 0 8px rgba(255,215,120,0.35))`;
 
-    // Random depth
-    petal.style.zIndex =
-      Math.floor(Math.random() * 5);
+        // Random depth
+        petal.style.zIndex =
+          Math.floor(Math.random() * 5);
 
-    // Random sway
-    petal.style.setProperty(
-      '--drift',
-      `${-80 + Math.random() * 160}px`
-    );
+        // Random sway
+        petal.style.setProperty(
+          '--drift',
+          `${-80 + Math.random() * 160}px`
+        );
 
-    // Random rotate
-    petal.style.setProperty(
-      '--rotate',
-      `${Math.random() * 720}deg`
-    );
+        // Random rotate
+        petal.style.setProperty(
+          '--rotate',
+          `${Math.random() * 720}deg`
+        );
 
-    container.appendChild(petal);
-  }
+        container.appendChild(petal);
+      }
 
-  // Mouse interaction
-  document.addEventListener('mousemove', (e) => {
+      // Mouse interaction
+      document.addEventListener('mousemove', (e) => {
 
-    const petals =
-      document.querySelectorAll('.petal');
+        const petals =
+          document.querySelectorAll('.petal');
 
-    petals.forEach((petal, index) => {
+        petals.forEach((petal, index) => {
 
-      const speed =
-        (index % 5) * 0.003;
+          const speed =
+            (index % 5) * 0.003;
 
-      const x =
-        (window.innerWidth / 2 - e.clientX) * speed;
+          const x =
+            (window.innerWidth / 2 - e.clientX) * speed;
 
-      petal.style.transform +=
-        ` translateX(${x}px)`;
-    });
+          petal.style.transform +=
+            ` translateX(${x}px)`;
+        });
 
-  });
+      });
 
-  // Fade away after 90 seconds
-  setTimeout(() => {
+      // Fade away after 90 seconds
+      setTimeout(() => {
 
-    container.style.transition =
-      'opacity 5s ease';
+        container.style.transition =
+          'opacity 5s ease';
 
-    container.style.opacity = '0';
+        container.style.opacity = '0';
 
-    setTimeout(() => {
-      container.innerHTML = '';
-    }, 5000);
+        setTimeout(() => {
+          container.innerHTML = '';
+        }, 5000);
 
-  }, 90000);
-}
+      }, 90000);
+    }
 
     // PARTICLES
     function initParticles() {
@@ -2587,39 +2458,39 @@ body {
           setTimeout(() => {
             const mandap = document.getElementById('mandap-section');
 
-const startY = window.scrollY;
-const targetY =
-  startY + mandap.getBoundingClientRect().top;
+            const startY = window.scrollY;
+            const targetY =
+              startY + mandap.getBoundingClientRect().top;
 
-const duration = 3500; // Smooth 3.5-second scroll
-let startTime = null;
+            const duration = 3500; // Smooth 3.5-second scroll
+            let startTime = null;
 
-function smoothScroll(currentTime) {
-  if (startTime === null) startTime = currentTime;
+            function smoothScroll(currentTime) {
+              if (startTime === null) startTime = currentTime;
 
-  const elapsed = currentTime - startTime;
-  const progress = Math.min(elapsed / duration, 1);
+              const elapsed = currentTime - startTime;
+              const progress = Math.min(elapsed / duration, 1);
 
-  // Smooth ease-in-out movement
-  const easedProgress =
-    progress < 0.5
-      ? 4 * progress * progress * progress
-      : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+              // Smooth ease-in-out movement
+              const easedProgress =
+                progress < 0.5
+                  ? 4 * progress * progress * progress
+                  : 1 - Math.pow(-2 * progress + 2, 3) / 2;
 
-  window.scrollTo({
-    top: startY + (targetY - startY) * easedProgress,
-    left: 0,
-    behavior: 'instant'
-  });
+              window.scrollTo({
+                top: startY + (targetY - startY) * easedProgress,
+                left: 0,
+                behavior: 'instant'
+              });
 
-  if (progress < 1) {
-    requestAnimationFrame(smoothScroll);
-  }
-}
+              if (progress < 1) {
+                requestAnimationFrame(smoothScroll);
+              }
+            }
 
-           setTimeout(() => {
-  requestAnimationFrame(smoothScroll);
-}, 2000);
+            setTimeout(() => {
+              requestAnimationFrame(smoothScroll);
+            }, 2000);
 
           }, 500);
         }, 600);
@@ -2627,30 +2498,30 @@ function smoothScroll(currentTime) {
     }
 
     // MUSIC
-// RANDOM WEDDING MUSIC
+    // RANDOM WEDDING MUSIC
 
-const weddingSongs = [
-    "music/song1.mp3",
-    "music/song2.mp3",
-    "music/song3.mp3",
-    "music/song4.mp3"
-];
+    const weddingSongs = [
+      "music/song1.mp3",
+      "music/song2.mp3",
+      "music/song3.mp3",
+      "music/song4.mp3"
+    ];
 
-const music = document.getElementById("wedding-music");
-const musicBtn = document.getElementById("music-btn");
+    const music = document.getElementById("wedding-music");
+    const musicBtn = document.getElementById("music-btn");
 
-let musicStarted = false;
-let isMusicLoading = false;
+    let musicStarted = false;
+    let isMusicLoading = false;
 
-// Play a random song
-async function playRandomWeddingSong() {
-    if (musicStarted || isMusicLoading) return;
+    // Play a random song
+    async function playRandomWeddingSong() {
+      if (musicStarted || isMusicLoading) return;
 
-    isMusicLoading = true;
+      isMusicLoading = true;
 
-    try {
+      try {
         const randomIndex = Math.floor(
-            Math.random() * weddingSongs.length
+          Math.random() * weddingSongs.length
         );
 
         const selectedSong = weddingSongs[randomIndex];
@@ -2668,56 +2539,56 @@ async function playRandomWeddingSong() {
         musicBtn.title = "Turn music off";
 
         console.log("Wedding music started successfully.");
-    } catch (error) {
+      } catch (error) {
         console.error("Wedding music playback failed:", error);
 
         musicBtn.textContent = "🎵";
         musicBtn.title = "Play wedding music";
-    } finally {
+      } finally {
         isMusicLoading = false;
+      }
     }
-}
 
-// Music on/off button
-musicBtn.addEventListener("click", async () => {
-    if (music.paused) {
+    // Music on/off button
+    musicBtn.addEventListener("click", async () => {
+      if (music.paused) {
         if (!music.src) {
-            await playRandomWeddingSong();
-            return;
+          await playRandomWeddingSong();
+          return;
         }
 
         try {
-            await music.play();
+          await music.play();
 
-            musicBtn.textContent = "🔇";
-            musicBtn.title = "Turn music off";
+          musicBtn.textContent = "🔇";
+          musicBtn.title = "Turn music off";
         } catch (error) {
-            console.error("Unable to resume music:", error);
+          console.error("Unable to resume music:", error);
         }
-    } else {
+      } else {
         music.pause();
 
         musicBtn.textContent = "🎵";
         musicBtn.title = "Turn music on";
-    }
-});
+      }
+    });
 
-// Keep the button in sync with the audio player
-music.addEventListener("pause", () => {
-    musicBtn.textContent = "🎵";
-    musicBtn.title = "Turn music on";
-});
+    // Keep the button in sync with the audio player
+    music.addEventListener("pause", () => {
+      musicBtn.textContent = "🎵";
+      musicBtn.title = "Turn music on";
+    });
 
-music.addEventListener("play", () => {
-    musicBtn.textContent = "🔇";
-    musicBtn.title = "Turn music off";
-});
+    music.addEventListener("play", () => {
+      musicBtn.textContent = "🔇";
+      musicBtn.title = "Turn music off";
+    });
 
-music.addEventListener("error", () => {
-    console.error(
+    music.addEventListener("error", () => {
+      console.error(
         "Unable to load music. Check the MP3 filename and file path."
-    );
-});
+      );
+    });
 
     // CALENDAR
     function addToCalendar() {
@@ -2726,19 +2597,19 @@ music.addEventListener("error", () => {
     }
     const hero = document.querySelector('#mandap-section');
 
-hero.addEventListener('mousemove', (e) => {
-  const x = (e.clientX / window.innerWidth - 0.5);
-  const y = (e.clientY / window.innerHeight - 0.5);
+    hero.addEventListener('mousemove', (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5);
+      const y = (e.clientY / window.innerHeight - 0.5);
 
-  document.querySelector('.sunrays').style.transform =
-    `translateX(-50%) translate(${x * 40}px, ${y * 20}px)`;
+      document.querySelector('.sunrays').style.transform =
+        `translateX(-50%) translate(${x * 40}px, ${y * 20}px)`;
 
-  document.querySelector('.ganesha-img').style.transform =
-    `translate(${x * 15}px, ${y * 15}px)`;
+      document.querySelector('.ganesha-img').style.transform =
+        `translate(${x * 15}px, ${y * 15}px)`;
 
-  document.querySelector('.hero-content').style.transform =
-    `translate(${x * 8}px, ${y * 8}px)`;
-});
+      document.querySelector('.hero-content').style.transform =
+        `translate(${x * 8}px, ${y * 8}px)`;
+    });
 
 
     setTimeout(() => {
@@ -2746,83 +2617,83 @@ hero.addEventListener('mousemove', (e) => {
     }, 2500);
     //GUEST NAME 
     window.addEventListener('DOMContentLoaded', () => {
-  const guest = new URLSearchParams(window.location.search).get('guest');
-  const guestBox = document.getElementById('guest-envelope-name');
-  if (!guestBox) return;
+      const guest = new URLSearchParams(window.location.search).get('guest');
+      const guestBox = document.getElementById('guest-envelope-name');
+      if (!guestBox) return;
 
-  guestBox.textContent = '';
-  if (guest && guest.trim() !== '') {
-    guestBox.append('Invited To', document.createElement('br'));
-    const strong = document.createElement('strong');
-    strong.textContent = guest.trim();
-    guestBox.append(strong);
-  } else {
-    guestBox.textContent = 'With Love & Blessings';
-  }
-});
+      guestBox.textContent = '';
+      if (guest && guest.trim() !== '') {
+        guestBox.append('Invited To', document.createElement('br'));
+        const strong = document.createElement('strong');
+        strong.textContent = guest.trim();
+        guestBox.append(strong);
+      } else {
+        guestBox.textContent = 'With Love & Blessings';
+      }
+    });
     document.addEventListener("DOMContentLoaded", function () {
 
-    const params = new URLSearchParams(window.location.search);
+      const params = new URLSearchParams(window.location.search);
 
-    const event = params.get("event");
+      const event = params.get("event");
 
-    const engagementDiv = document.getElementById("engagement-event");
+      const engagementDiv = document.getElementById("engagement-event");
 
-    if (event === "engagement") {
+      if (event === "engagement") {
         engagementDiv.classList.add("show-engagement");
-    }
+      }
 
-});
+    });
     async function startWeddingMusic() {
-  const music = document.getElementById('wedding-music');
-  const musicBtn = document.getElementById('music-btn');
+      const music = document.getElementById('wedding-music');
+      const musicBtn = document.getElementById('music-btn');
 
-  try {
-    await music.play();
-    musicBtn.textContent = '🔊';
-    musicBtn.title = 'Turn music off';
-  } catch (error) {
-    console.log('Music will start after user interaction.');
-  }
-}
-document.addEventListener("DOMContentLoaded", function () {
+      try {
+        await music.play();
+        musicBtn.textContent = '🔊';
+        musicBtn.title = 'Turn music off';
+      } catch (error) {
+        console.log('Music will start after user interaction.');
+      }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
 
-    const params = new URLSearchParams(window.location.search);
+      const params = new URLSearchParams(window.location.search);
 
-    const isEngagement = params.get("event") === "engagement";
+      const isEngagement = params.get("event") === "engagement";
 
-    // New wedding RSVP form
-    const weddingRSVP =
+      // New wedding RSVP form
+      const weddingRSVP =
         "https://docs.google.com/forms/d/e/1FAIpQLSd4O1plV6gYACDEmiedJ4I46mNAuRPICgluNCfdh8-Zf67QvA/viewform?usp=publish-editor";
 
-    // Replace this with your OLD engagement RSVP form link
-    const engagementRSVP = "https://docs.google.com/forms/d/e/1FAIpQLSfzJPy18RQCo_JgxnjaVc240By4WxmzdVVdt599pucrG4e7yQ/viewform?usp=publish-editor";
+      // Replace this with your OLD engagement RSVP form link
+      const engagementRSVP = "https://docs.google.com/forms/d/e/1FAIpQLSfzJPy18RQCo_JgxnjaVc240By4WxmzdVVdt599pucrG4e7yQ/viewform?usp=publish-editor";
 
-    const rsvpButton = document.getElementById("rsvp-btn");
-    const engagementCard = document.getElementById("engagement-event");
+      const rsvpButton = document.getElementById("rsvp-btn");
+      const engagementCard = document.getElementById("engagement-event");
 
-    if (isEngagement) {
+      if (isEngagement) {
 
         // Show engagement event
         if (engagementCard) {
-            engagementCard.style.display = "block";
+          engagementCard.style.display = "block";
         }
 
         // Old engagement RSVP
         rsvpButton.href = engagementRSVP;
 
-    } else {
+      } else {
 
         // Hide engagement event
         if (engagementCard) {
-            engagementCard.style.display = "none";
+          engagementCard.style.display = "none";
         }
 
         // New wedding RSVP
         rsvpButton.href = weddingRSVP;
-    }
+      }
 
-});
+    });
   </script>
 </body>
 
