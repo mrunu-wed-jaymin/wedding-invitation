@@ -140,10 +140,10 @@
 
 /* Card rising animation */
 
-#invite-card.rising {
+/* #invite-card.rising {
     transform: translate(-50%, 35%);
     opacity: 1;
-}
+} */
 
 /* Divine blessing text */
 
@@ -1984,6 +1984,54 @@ body {
         font-size: 14px;
     }
 }
+/* ===== INVITE CARD: final centered fix ===== */
+#invite-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  width: 86%;
+  max-width: 380px;
+  box-sizing: border-box;
+  padding: 14px 10px;
+  opacity: 0;
+  transform: translate(-50%, -20%);   /* starts slightly low, rises into center */
+  transition: transform 1.2s cubic-bezier(0.2, 0.8, 0.3, 1), opacity 1s ease;
+}
+
+#invite-card.rising {
+  transform: translate(-50%, -50%);   /* true center, any card height */
+  opacity: 1;
+}
+
+#invite-card > p:first-child {
+  font-size: clamp(8px, 2.6vw, 12px);
+  letter-spacing: 0.08em;
+  padding-left: 0.08em;               /* balances trailing letter-spacing so it looks centered */
+  white-space: normal;
+}
+
+.guest-envelope-name {
+  font-size: clamp(11px, 3.4vw, 14px);
+  letter-spacing: 0.05em;
+  margin: 8px 0;
+  overflow-wrap: anywhere;
+}
+
+#invite-card h2 {
+  font-size: clamp(20px, 6vw, 28px);
+  margin: 6px 0;
+}
+
+@media screen and (max-width: 430px) {
+  .envelope-body {
+    aspect-ratio: auto;
+    min-height: 260px;                /* gives room for the extra guest-name lines */
+  }
+  #invite-card.rising {
+    transform: translate(-50%, -50%); /* overrides the old 35% rule */
+  }
+}
   </style>
 </head>
 
@@ -2696,27 +2744,22 @@ hero.addEventListener('mousemove', (e) => {
     setTimeout(() => {
       document.querySelectorAll('#mandap-section .reveal').forEach(el => el.classList.add('visible'));
     }, 2500);
-    // SHOW GUEST NAME FROM URL
+    //GUEST NAME 
     window.addEventListener('DOMContentLoaded', () => {
-      const guest = new URLSearchParams(window.location.search).get('guest');
-      const guestBox = document.getElementById('guest-envelope-name');
-      if (guestBox) {
-        if (guest && guest.trim() !== '') {
+  const guest = new URLSearchParams(window.location.search).get('guest');
+  const guestBox = document.getElementById('guest-envelope-name');
+  if (!guestBox) return;
 
-          guestBox.innerHTML = `
-        Invited To<br>
-        <strong>${guest}</strong>
-      `;
-
-        } else {
-
-          guestBox.innerHTML = `
-        With Love & Blessings
-      `;
-        }
-      }
-
-    });
+  guestBox.textContent = '';
+  if (guest && guest.trim() !== '') {
+    guestBox.append('Invited To', document.createElement('br'));
+    const strong = document.createElement('strong');
+    strong.textContent = guest.trim();
+    guestBox.append(strong);
+  } else {
+    guestBox.textContent = 'With Love & Blessings';
+  }
+});
     document.addEventListener("DOMContentLoaded", function () {
 
     const params = new URLSearchParams(window.location.search);
