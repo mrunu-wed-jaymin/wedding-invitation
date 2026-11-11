@@ -2205,7 +2205,8 @@
       </a>
       <p
         style="margin-top:1.5rem; font-family:'Cormorant Garamond',serif; font-size:0.8rem; color:var(--text-mid); letter-spacing:0.15em; opacity:0.7;">
-        For queries: Shantaram Narsule: <a href="tel:+919769925727">+91 97699 25727</a><br> Jayesh Mewada: <a href="tel:+919892505096">+91 98925 05096 </a>
+        For queries: Shantaram Narsule: <a href="tel:+919769925727">+91 97699 25727</a><br> Jayesh Mewada: <a
+          href="tel:+919892505096">+91 98925 05096 </a>
       </p>
     </div>
   </section>
@@ -2251,7 +2252,8 @@
           <div class="venue-detail-icon">📞</div>
           <div class="venue-detail-text">
             <strong>CONTACT</strong>
-            <span>Shantaram Narsule: <a href="tel:+919769925727">+91 97699 25727</a><br>Jayesh Mewada: <a href="tel:+919892505096">+91 98925 05096</a></span>
+            <span>Shantaram Narsule: <a href="tel:+919769925727">+91 97699 25727</a><br>Jayesh Mewada: <a
+                href="tel:+919892505096">+91 98925 05096</a></span>
           </div>
         </div>
         <div class="venue-actions">
@@ -2693,6 +2695,24 @@
         rsvpButton.href = weddingRSVP;
       }
 
+    });
+    // Stop music when user switches tab or app goes into background
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        music.pause();
+      }
+    });
+
+    // Stop music when page is closed or navigated away
+    window.addEventListener("pagehide", () => {
+      music.pause();
+      music.currentTime = 0;
+    });
+
+    // Additional cleanup when page is unloaded
+    window.addEventListener("beforeunload", () => {
+      music.pause();
+      music.currentTime = 0;
     });
   </script>
 </body>
