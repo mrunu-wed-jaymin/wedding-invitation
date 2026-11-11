@@ -2855,7 +2855,7 @@ const GIFTS = [
 (function initGifts() {
   const params = new URLSearchParams(location.search);
   const section = document.getElementById('gift-section');
-  if (params.get('event') === 'engagement') { section.style.display = 'none'; return; }
+  // if (params.get('event') === 'engagement') { section.style.display = 'none'; return; }
 
   const grid = document.getElementById('gift-grid');
   const modal = document.getElementById('gift-modal');
