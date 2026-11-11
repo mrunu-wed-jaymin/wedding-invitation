@@ -2849,7 +2849,19 @@ const GIFTS = [
   { id: 'g05', icon: '🍽️', name: 'Dinner Set' },
   { id: 'g06', icon: '🖼️', name: 'Wall Art' },
   { id: 'g07', icon: '💡', name: 'Home Lighting' },
-  { id: 'g08', icon: '🧺', name: 'Gift Hamper' }
+  { id: 'g08', icon: '🧺', name: 'Gift Hamper' },
+  { id: 'g09', icon: '💝', name: 'Honeymoon Gift card' },
+  { id: 'g10', icon: '🔊', name: 'Smart Home Speaker' },
+  { id: 'g11', icon: '🍟', name: 'Air Fryer' },
+  { id: 'g12', icon: '🔥', name: 'Oven' },
+  { id: 'g13', icon: '🧳', name: 'Luggage' },
+  { id: 'g14', icon: '🥣', name: 'Mixer' },
+  { id: 'g15', icon: '🏡', name: 'Home Decor' }
+
+
+
+
+
 ];
 
 (function initGifts() {
@@ -2877,6 +2889,7 @@ const GIFTS = [
       const card = document.createElement('button');
       card.type = 'button';
       card.className = 'gift-card' + (taken ? ' locked' : '') + (mine ? ' mine' : '');
+      
       card.disabled = taken;
 
       const icon = document.createElement('span');
