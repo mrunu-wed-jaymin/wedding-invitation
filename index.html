@@ -1902,6 +1902,102 @@
         /* overrides the old 35% rule */
       }
     }
+    /* ===== GIFT REGISTRY ===== */
+#gift-section {
+  padding: 6rem 1.2rem;
+  background: linear-gradient(180deg, #FDF0E0 0%, #FFF8F8 100%);
+}
+.gift-intro {
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  text-align: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-mid);
+}
+.gift-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 1rem;
+}
+.gift-card {
+  position: relative;
+  padding: 1.6rem 1rem;
+  text-align: center;
+  background: linear-gradient(145deg, rgba(255,255,255,.8), rgba(255,248,240,.6));
+  border: 1px solid rgba(201,168,76,.35);
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: 'Cormorant Garamond', serif;
+  color: var(--text-dark);
+  transition: transform .3s, box-shadow .3s;
+}
+.gift-card:hover:not(.locked) {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(139,105,20,.18);
+}
+.gift-card .gift-icon { font-size: 2.4rem; display: block; margin-bottom: .6rem; }
+.gift-card .gift-name { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; }
+.gift-card .gift-status {
+  display: block; margin-top: .6rem;
+  font-size: .7rem; letter-spacing: .25em; color: var(--gold-dark);
+}
+.gift-card.locked {
+  cursor: not-allowed;
+  filter: grayscale(.9);
+  opacity: .55;
+}
+.gift-card.locked .gift-status { color: var(--text-mid); }
+.gift-card.mine {
+  filter: none; opacity: 1; cursor: default;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 2px rgba(201,168,76,.4);
+}
+.gift-loading, .gift-error {
+  grid-column: 1 / -1; text-align: center;
+  font-family: 'Cormorant Garamond', serif; color: var(--text-mid);
+}
+
+/* confirm modal */
+#gift-modal {
+  position: fixed; inset: 0; z-index: 2000;
+  display: none; align-items: center; justify-content: center;
+  padding: 1rem; background: rgba(58,26,10,.55);
+}
+#gift-modal.open { display: flex; }
+.gift-modal-box {
+  width: min(380px, 100%);
+  padding: 2rem 1.5rem; text-align: center;
+  background: linear-gradient(145deg, #FFF8F0, #FFF0E0);
+  border: 1px solid rgba(201,168,76,.5);
+  border-radius: 14px;
+  box-shadow: 0 30px 80px rgba(0,0,0,.3);
+  font-family: 'Cormorant Garamond', serif;
+}
+.gift-modal-box h3 { font-family: 'Playfair Display', serif; font-style: italic; margin-bottom: .6rem; }
+.gift-modal-box p { color: var(--text-mid); font-size: .95rem; line-height: 1.6; margin-bottom: 1rem; }
+.gift-modal-box input {
+  width: 100%; padding: .7rem; margin-bottom: 1rem;
+  border: 1px solid rgba(201,168,76,.5); border-radius: 6px;
+  font-family: 'Cormorant Garamond', serif; font-size: 1rem;
+  background: #fff; text-align: center;
+}
+.gift-modal-actions { display: flex; gap: .6rem; }
+.gift-modal-actions button {
+  flex: 1; padding: .7rem; border-radius: 6px; cursor: pointer;
+  font-family: 'Cormorant Garamond', serif; font-size: .9rem; letter-spacing: .15em;
+  border: 1px solid var(--gold); background: transparent; color: var(--gold-dark);
+}
+.gift-modal-actions button.primary {
+  background: linear-gradient(135deg, var(--rose), var(--gold-dark));
+  color: #fff; border-color: transparent;
+}
+.gift-modal-actions button:disabled { opacity: .6; cursor: wait; }
+.gift-modal-msg { min-height: 1.2em; margin-top: .8rem; font-size: .85rem; color: var(--deep-rose); }
   </style>
 </head>
 
@@ -2186,6 +2282,34 @@
     </div>
   </div>
 </section> -->
+
+<!-- GIFT REGISTRY -->
+<section id="gift-section">
+  <div class="section-label text-center reveal">❋ &nbsp; WITH LOVE &nbsp; ❋</div>
+  <h2 class="section-title reveal reveal-delay-1">Gift <span>Wishlist</span></h2>
+  <div class="section-subtitle reveal reveal-delay-2">CHOOSE A GIFT · ONE PER GIFT</div>
+  <p class="gift-intro">
+    Your presence is the greatest gift. If you wish to bless us with something,
+    please pick a gift below. Once chosen, it is reserved so no one else gets the same one.
+  </p>
+  <div class="gift-grid" id="gift-grid">
+    <div class="gift-loading">Loading gifts…</div>
+  </div>
+</section>
+
+<!-- Gift confirm modal -->
+<div id="gift-modal">
+  <div class="gift-modal-box">
+    <h3 id="gift-modal-title">Reserve this gift?</h3>
+    <p>Once confirmed, this gift is locked for everyone else and cannot be changed.</p>
+    <input type="text" id="gift-guest-input" placeholder="Your name" maxlength="80">
+    <div class="gift-modal-actions">
+      <button type="button" id="gift-cancel">CANCEL</button>
+      <button type="button" class="primary" id="gift-confirm">CONFIRM</button>
+    </div>
+    <div class="gift-modal-msg" id="gift-modal-msg"></div>
+  </div>
+</div>
 
   <!-- RSVP — Google Form button -->
   <section id="rsvp-section">
@@ -2714,6 +2838,126 @@
       music.pause();
       music.currentTime = 0;
     });
+    // ===== GIFT REGISTRY =====
+const GIFT_API = 'https://script.google.com/macros/s/AKfycbz1IEJ5wmy7z7KSFVK1rmObfKZgJu2ZpFLcIBYSRESqlScXb25DtGwXd8oVTM5rk-yb/exec';
+
+const GIFTS = [
+  { id: 'g01', icon: '🛋️', name: 'Sofa Set' },
+  { id: 'g02', icon: '🍳', name: 'Cookware Set' },
+  { id: 'g03', icon: '🛏️', name: 'Bedsheet Collection' },
+  { id: 'g04', icon: '☕', name: 'Coffee Machine' },
+  { id: 'g05', icon: '🍽️', name: 'Dinner Set' },
+  { id: 'g06', icon: '🖼️', name: 'Wall Art' },
+  { id: 'g07', icon: '💡', name: 'Home Lighting' },
+  { id: 'g08', icon: '🧺', name: 'Gift Hamper' }
+];
+
+(function initGifts() {
+  const params = new URLSearchParams(location.search);
+  const section = document.getElementById('gift-section');
+  if (params.get('event') === 'engagement') { section.style.display = 'none'; return; }
+
+  const grid = document.getElementById('gift-grid');
+  const modal = document.getElementById('gift-modal');
+  const nameInput = document.getElementById('gift-guest-input');
+  const msg = document.getElementById('gift-modal-msg');
+  const confirmBtn = document.getElementById('gift-confirm');
+  const title = document.getElementById('gift-modal-title');
+
+  let claimed = [];
+  let selected = null;
+  let myGift = null;
+  try { myGift = localStorage.getItem('myGiftId'); } catch (e) {}
+
+  function render() {
+    grid.textContent = '';
+    GIFTS.forEach(g => {
+      const taken = claimed.includes(g.id);
+      const mine = g.id === myGift;
+      const card = document.createElement('button');
+      card.type = 'button';
+      card.className = 'gift-card' + (taken ? ' locked' : '') + (mine ? ' mine' : '');
+      card.disabled = taken;
+
+      const icon = document.createElement('span');
+      icon.className = 'gift-icon'; icon.textContent = g.icon;
+      const name = document.createElement('span');
+      name.className = 'gift-name'; name.textContent = g.name;
+      const status = document.createElement('span');
+      status.className = 'gift-status';
+      status.textContent = mine ? '✦ YOUR GIFT' : taken ? '🔒 RESERVED' : 'TAP TO CHOOSE';
+
+      card.append(icon, name, status);
+      if (!taken) card.addEventListener('click', () => openModal(g));
+      grid.appendChild(card);
+    });
+  }
+
+  async function loadClaimed() {
+    try {
+      const res = await fetch(GIFT_API);
+      const data = await res.json();
+      if (data.ok) { claimed = data.claimed; render(); }
+    } catch (e) {
+      if (!grid.querySelector('.gift-card')) {
+        grid.innerHTML = '<div class="gift-error">Gifts could not be loaded. Please refresh.</div>';
+      }
+    }
+  }
+
+  function openModal(g) {
+    selected = g;
+    title.textContent = 'Reserve "' + g.name + '"?';
+    nameInput.value = (params.get('guest') || '').trim();
+    msg.textContent = '';
+    confirmBtn.disabled = false;
+    modal.classList.add('open');
+  }
+  function closeModal() { modal.classList.remove('open'); selected = null; }
+
+  document.getElementById('gift-cancel').addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  confirmBtn.addEventListener('click', async () => {
+    const guest = nameInput.value.trim();
+    if (!guest) { msg.textContent = 'Please enter your name.'; return; }
+    if (!selected) return;
+
+    confirmBtn.disabled = true;
+    msg.textContent = 'Reserving…';
+    try {
+      // text/plain avoids a CORS preflight, which Apps Script doesn't support
+      const res = await fetch(GIFT_API, {
+        method: 'POST',
+        body: JSON.stringify({ id: selected.id, guest })
+      });
+      const data = await res.json();
+
+      if (data.ok) {
+        claimed = data.claimed;
+        myGift = selected.id;
+        try { localStorage.setItem('myGiftId', myGift); } catch (e) {}
+        render();
+        closeModal();
+      } else if (data.error === 'taken') {
+        if (data.claimed) claimed = data.claimed;
+        render();
+        msg.textContent = 'Sorry, someone just reserved this gift. Please choose another.';
+        setTimeout(closeModal, 2000);
+      } else {
+        msg.textContent = 'Something went wrong. Please try again.';
+        confirmBtn.disabled = false;
+      }
+    } catch (e) {
+      msg.textContent = 'Network error. Please try again.';
+      confirmBtn.disabled = false;
+    }
+  });
+
+  render();
+  loadClaimed();
+  setInterval(loadClaimed, 30000); // keep locks fresh while the page is open
+})();
   </script>
 </body>
 
