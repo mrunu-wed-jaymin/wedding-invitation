@@ -10,26 +10,103 @@
     rel="stylesheet">
   <style>
     /* Indic scripts: no letter-spacing (breaks conjuncts), proper fonts */
-html[lang="gu"] *{font-family:'Noto Sans Gujarati',sans-serif !important;letter-spacing:normal !important}
-html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-spacing:normal !important}
+    html[lang="gu"] * {
+      font-family: 'Noto Sans Gujarati', sans-serif !important;
+      letter-spacing: normal !important
+    }
 
-/* Language switcher (sits left of the music button) */
-#lang-switch{position:fixed;bottom:2rem;right:5.2rem;height:50px;display:flex;align-items:center;gap:2px;padding:4px;
-  border-radius:30px;background:rgba(255,248,240,.94);border:1px solid rgba(201,168,76,.5);
-  box-shadow:0 4px 20px rgba(201,168,76,.35);z-index:2147483000;pointer-events:auto;isolation:isolate}
-#lang-switch button{border:0;background:transparent;height:100%;padding:0 .7rem;border-radius:26px;
-  font-size:.85rem;color:var(--gold-dark);cursor:pointer;transition:.3s;position:relative;z-index:1;pointer-events:auto;touch-action:manipulation}
-#lang-switch button.active{background:linear-gradient(135deg,var(--gold),var(--gold-dark));color:#fff}
-#lang-switch{ -webkit-tap-highlight-color:transparent }
+    html[lang="mr"] * {
+      font-family: 'Noto Serif Devanagari', serif !important;
+      letter-spacing: normal !important
+    }
 
-/* WhatsApp RSVP */
-.wa-field{display:block;width:min(100%,340px);margin:0 auto 1rem;padding:.85rem 1rem;border-radius:8px;
-  border:1px solid rgba(201,168,76,.5);background:#fffdf9;font-family:'Cormorant Garamond',serif;
-  font-size:1.05rem;color:var(--text-dark);text-align:center}
-.wa-label{display:block;font-family:'Cormorant Garamond',serif;font-size:.8rem;letter-spacing:.2em;color:var(--gold-dark);margin-bottom:.3rem}
-.rsvp-btn.wa-yes{background:linear-gradient(135deg,#25D366,#128C7E);margin-top:1.2rem}
-.rsvp-btn.wa-no{background:transparent;color:var(--gold-dark);border:1px solid var(--gold);margin-top:.8rem}
-.wa-hint{margin-top:1.2rem;font-family:'Cormorant Garamond',serif;font-size:.8rem;color:var(--text-mid);opacity:.7}
+    /* Language switcher (sits left of the music button) */
+    #lang-switch {
+      position: fixed;
+      bottom: 2rem;
+      right: 5.2rem;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      padding: 4px;
+      border-radius: 30px;
+      background: rgba(255, 248, 240, .94);
+      border: 1px solid rgba(201, 168, 76, .5);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, .35);
+      z-index: 2147483000;
+      pointer-events: auto;
+      isolation: isolate
+    }
+
+    #lang-switch button {
+      border: 0;
+      background: transparent;
+      height: 100%;
+      padding: 0 .7rem;
+      border-radius: 26px;
+      font-size: .85rem;
+      color: var(--gold-dark);
+      cursor: pointer;
+      transition: .3s;
+      position: relative;
+      z-index: 1;
+      pointer-events: auto;
+      touch-action: manipulation
+    }
+
+    #lang-switch button.active {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: #fff
+    }
+
+    #lang-switch {
+      -webkit-tap-highlight-color: transparent
+    }
+
+    /* WhatsApp RSVP */
+    .wa-field {
+      display: block;
+      width: min(100%, 340px);
+      margin: 0 auto 1rem;
+      padding: .85rem 1rem;
+      border-radius: 8px;
+      border: 1px solid rgba(201, 168, 76, .5);
+      background: #fffdf9;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.05rem;
+      color: var(--text-dark);
+      text-align: center
+    }
+
+    .wa-label {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .8rem;
+      letter-spacing: .2em;
+      color: var(--gold-dark);
+      margin-bottom: .3rem
+    }
+
+    .rsvp-btn.wa-yes {
+      background: linear-gradient(135deg, #25D366, #128C7E);
+      margin-top: 1.2rem
+    }
+
+    .rsvp-btn.wa-no {
+      background: transparent;
+      color: var(--gold-dark);
+      border: 1px solid var(--gold);
+      margin-top: .8rem
+    }
+
+    .wa-hint {
+      margin-top: 1.2rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: .8rem;
+      color: var(--text-mid);
+      opacity: .7
+    }
 
     :root {
       --gold: #C9A84C;
@@ -1168,7 +1245,12 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
     }
 
     @media (max-width: 600px) {
-  #lang-switch{right:5.2rem;bottom:2rem;z-index:2147483000}
+      #lang-switch {
+        right: 5.2rem;
+        bottom: 2rem;
+        z-index: 2147483000
+      }
+
       .timeline::before {
         left: 20px;
       }
@@ -1186,7 +1268,11 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
     }
 
     @media (max-width: 600px) {
-  #lang-switch{right:5.2rem;bottom:2rem;z-index:2147483000}
+      #lang-switch {
+        right: 5.2rem;
+        bottom: 2rem;
+        z-index: 2147483000
+      }
 
       .timeline-item,
       .timeline-item:nth-child(even) {
@@ -1210,7 +1296,12 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
     }
 
     @media (max-width: 600px) {
-  #lang-switch{right:5.2rem;bottom:2rem;z-index:2147483000}
+      #lang-switch {
+        right: 5.2rem;
+        bottom: 2rem;
+        z-index: 2147483000
+      }
+
       .timeline-dot {
         left: 20px;
       }
@@ -1236,7 +1327,12 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
     }
 
     @media (max-width: 600px) {
-  #lang-switch{right:5.2rem;bottom:2rem;z-index:2147483000}
+      #lang-switch {
+        right: 5.2rem;
+        bottom: 2rem;
+        z-index: 2147483000
+      }
+
       .timeline-content {
         width: 100%;
       }
@@ -1307,7 +1403,11 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
     }
 
     @media (max-width: 600px) {
-  #lang-switch{right:5.2rem;bottom:2rem;z-index:2147483000}
+      #lang-switch {
+        right: 5.2rem;
+        bottom: 2rem;
+        z-index: 2147483000
+      }
 
       .timeline-item:nth-child(odd) .timeline-content,
       .timeline-item:nth-child(even) .timeline-content {
@@ -1929,57 +2029,129 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
         /* overrides the old 35% rule */
       }
     }
+
     /* ===== BLESSINGS NOTE ===== */
-#blessings-section {
-  padding: 5rem 1.2rem;
-  background: linear-gradient(180deg, #FDF0E0 0%, #FFF8F8 100%);
-}
-.blessings-card {
-  max-width: 560px;
-  margin: 0 auto;
-  padding: 2.5rem 1.8rem;
-  text-align: center;
-  background: linear-gradient(145deg, rgba(255,255,255,.85), rgba(255,248,240,.85));
-  border: 1px solid rgba(201,168,76,.35);
-  border-radius: 16px;
-  box-shadow: 0 25px 70px rgba(139,105,20,.12), inset 0 1px 0 rgba(255,255,255,.8);
-}
-.blessings-icon { font-size: 2.2rem; display: block; margin-bottom: .8rem; }
-.blessings-title {
-  font-family: 'Dancing Script', cursive;
-  font-size: clamp(1.8rem, 6vw, 2.4rem);
-  color: var(--deep-rose);
-  margin-bottom: 1rem;
-}
-.blessings-text {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic;
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: var(--text-mid);
-}
+    #blessings-section {
+      padding: 5rem 1.2rem;
+      background: linear-gradient(180deg, #FDF0E0 0%, #FFF8F8 100%);
+    }
 
-   
+    .blessings-card {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 2.5rem 1.8rem;
+      text-align: center;
+      background: linear-gradient(145deg, rgba(255, 255, 255, .85), rgba(255, 248, 240, .85));
+      border: 1px solid rgba(201, 168, 76, .35);
+      border-radius: 16px;
+      box-shadow: 0 25px 70px rgba(139, 105, 20, .12), inset 0 1px 0 rgba(255, 255, 255, .8);
+    }
 
-/* ===== Refined multilingual and WhatsApp RSVP polish ===== */
-#wa-rsvp { display:flex; flex-direction:column; align-items:center; gap:.65rem; width:100%; }
-#wa-rsvp .wa-field { width:min(100%,390px); min-height:52px; border-radius:12px; text-align:left; padding:.9rem 1rem; outline:none; transition:border-color .25s,box-shadow .25s; }
-#wa-rsvp .wa-field:focus { border-color:var(--gold-dark); box-shadow:0 0 0 4px rgba(201,168,76,.13); }
-#wa-rsvp .wa-label { width:min(100%,390px); text-align:left; padding-left:.2rem; font-size:.82rem; }
-#wa-rsvp .rsvp-btn { width:min(100%,390px); min-height:54px; border-radius:999px; letter-spacing:.04em; font-weight:600; box-shadow:0 8px 22px rgba(20,100,75,.16); }
-#wa-rsvp .wa-no { box-shadow:none; }
-#wa-rsvp .wa-hint { max-width:390px; line-height:1.6; text-align:center; opacity:.9; }
-#wa-rsvp .wa-status { min-height:1.4em; margin-top:.25rem; color:var(--deep-rose); font-size:.9rem; }
-#wa-rsvp .wa-btn-icon { margin-right:.45rem; }
-.cd-box { min-width:clamp(64px,16vw,82px); }
-@media(max-width:480px) {
-  #date-reveal { padding:4.5rem 1rem; }
-  .rsvp-form-wrap { padding:2.2rem 1.15rem; }
-  #wa-rsvp .rsvp-btn { padding:.9rem 1rem; font-size:.98rem; }
-}
-@media(prefers-reduced-motion:reduce) {
-}
+    .blessings-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: .8rem;
+    }
 
+    .blessings-title {
+      font-family: 'Dancing Script', cursive;
+      font-size: clamp(1.8rem, 6vw, 2.4rem);
+      color: var(--deep-rose);
+      margin-bottom: 1rem;
+    }
+
+    .blessings-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: var(--text-mid);
+    }
+
+
+
+    /* ===== Refined multilingual and WhatsApp RSVP polish ===== */
+    #wa-rsvp {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .65rem;
+      width: 100%;
+    }
+
+    #wa-rsvp .wa-field {
+      width: min(100%, 390px);
+      min-height: 52px;
+      border-radius: 12px;
+      text-align: left;
+      padding: .9rem 1rem;
+      outline: none;
+      transition: border-color .25s, box-shadow .25s;
+    }
+
+    #wa-rsvp .wa-field:focus {
+      border-color: var(--gold-dark);
+      box-shadow: 0 0 0 4px rgba(201, 168, 76, .13);
+    }
+
+    #wa-rsvp .wa-label {
+      width: min(100%, 390px);
+      text-align: left;
+      padding-left: .2rem;
+      font-size: .82rem;
+    }
+
+    #wa-rsvp .rsvp-btn {
+      width: min(100%, 390px);
+      min-height: 54px;
+      border-radius: 999px;
+      letter-spacing: .04em;
+      font-weight: 600;
+      box-shadow: 0 8px 22px rgba(20, 100, 75, .16);
+    }
+
+    #wa-rsvp .wa-no {
+      box-shadow: none;
+    }
+
+    #wa-rsvp .wa-hint {
+      max-width: 390px;
+      line-height: 1.6;
+      text-align: center;
+      opacity: .9;
+    }
+
+    #wa-rsvp .wa-status {
+      min-height: 1.4em;
+      margin-top: .25rem;
+      color: var(--deep-rose);
+      font-size: .9rem;
+    }
+
+    #wa-rsvp .wa-btn-icon {
+      margin-right: .45rem;
+    }
+
+    .cd-box {
+      min-width: clamp(64px, 16vw, 82px);
+    }
+
+    @media(max-width:480px) {
+      #date-reveal {
+        padding: 4.5rem 1rem;
+      }
+
+      .rsvp-form-wrap {
+        padding: 2.2rem 1.15rem;
+      }
+
+      #wa-rsvp .rsvp-btn {
+        padding: .9rem 1rem;
+        font-size: .98rem;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {}
   </style>
 </head>
 
@@ -2000,11 +2172,11 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
 
   <audio id="wedding-music" loop preload="none"></audio>
   <!-- ===================== PART 2a: language switcher ===================== -->
-<div id="lang-switch" role="group" aria-label="Language">
-  <button data-lang="en" class="active">EN</button>
-  <button data-lang="gu">ગુ</button>
-  <button data-lang="mr">मरा</button>
-</div>
+  <div id="lang-switch" role="group" aria-label="Language">
+    <button data-lang="en" class="active">EN</button>
+    <button data-lang="gu">ગુ</button>
+    <button data-lang="mr">मरा</button>
+  </div>
 
 
 
@@ -2228,18 +2400,18 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
   </section>
 
   <!-- BLESSINGS NOTE -->
-<section id="blessings-section">
-  <div class="section-label text-center reveal">❋ &nbsp; WITH LOVE &nbsp; ❋</div>
-  <div class="blessings-card reveal reveal-delay-1">
-    <span class="blessings-icon">💌</span>
-    <div class="blessings-title">Your Blessings Are Our Gift</div>
-    <p class="blessings-text">
-      Your presence and your blessings mean the world to us, and we truly need nothing more.<br><br>
-      Should you wish to bless us with something extra, a little cash to help us
-      start our new home together would be the sweetest gift of all. 🪔
-    </p>
-  </div>
-</section>
+  <section id="blessings-section">
+    <div class="section-label text-center reveal">❋ &nbsp; WITH LOVE &nbsp; ❋</div>
+    <div class="blessings-card reveal reveal-delay-1">
+      <span class="blessings-icon">💌</span>
+      <div class="blessings-title">Your Blessings Are Our Gift</div>
+      <p class="blessings-text">
+        Your presence and your blessings mean the world to us, and we truly need nothing more.<br><br>
+        Should you wish to bless us with something extra, a little cash to help us
+        start our new home together would be the sweetest gift of all. 🪔
+      </p>
+    </div>
+  </section>
   <!-- RSVP — Google Form button -->
   <section id="rsvp-section">
     <div class="section-label text-center reveal">❋ &nbsp; YOU'RE INVITED &nbsp; ❋</div>
@@ -2768,174 +2940,192 @@ html[lang="mr"] *{font-family:'Noto Serif Devanagari',serif !important;letter-sp
       music.currentTime = 0;
     });
     const WA_NUMBER = '918369625523';                       // <- your WhatsApp number
-let LANG = 'en';
+    let LANG = 'en';
 
-/* strings: en / gu / mr */
-const T = {
-  rsvpIntro:{en:'We would be honoured by your presence as we begin our forever.<br>Please let us know if you can join us.',
-    gu:'અમારા નવા જીવનની શરૂઆતમાં આપની હાજરી અમારું સન્માન હશે.<br>કૃપા કરી જણાવશો કે આપ આવી શકશો કે નહીં.',
-    mr:'आमच्या नव्या आयुष्याच्या सुरुवातीला तुमची उपस्थिती आमचा सन्मान असेल.<br>कृपया तुम्ही येऊ शकाल का ते कळवा.'},
-  namePh:{en:'Your name',gu:'તમારું નામ',mr:'तुमचे नाव'},
-  guests:{en:'NUMBER OF GUESTS',gu:'મહેમાનોની સંખ્યા',mr:'पाहुण्यांची संख्या'},
-  yes:{en:'✦ Yes, we will be there',gu:'✦ હા, અમે આવીશું',mr:'✦ होय, आम्ही येऊ'},
-  no:{en:'Sorry, we can’t make it',gu:'માફ કરશો, અમે નહીં આવી શકીએ',mr:'क्षमस्व, आम्ही येऊ शकणार नाही'},
-  waHint:{en:'Opens WhatsApp with your reply ready to send',gu:'WhatsApp ખૂલશે, જવાબ તૈયાર હશે',mr:'WhatsApp उघडेल, उत्तर तयार असेल'},
-  waNameRequired:{en:'Please enter your name before sending your RSVP.',gu:'RSVP મોકલતા પહેલાં કૃપા કરીને તમારું નામ લખો.',mr:'RSVP पाठवण्यापूर्वी कृपया तुमचे नाव लिहा.'},
-  waGuestsInvalid:{en:'Please enter a guest count between 1 and 20.',gu:'કૃપા કરીને 1 થી 20 વચ્ચે મહેમાનોની સંખ્યા લખો.',mr:'कृपया 1 ते 20 दरम्यान पाहुण्यांची संख्या लिहा.'},
-  waSending:{en:'Opening WhatsApp with your RSVP…',gu:'તમારા RSVP સાથે WhatsApp ખોલી રહ્યું છે…',mr:'तुमच्या RSVP सह WhatsApp उघडत आहे…'},
-  waMessageTitle:{en:'Wedding RSVP — Mrunmayi & Jaymin',gu:'લગ્ન RSVP — મૃણ્મયી અને જયમીન',mr:'लग्न RSVP — मृण्मयी आणि जयमीन'},
-  waName:{en:'Name',gu:'નામ',mr:'नाव'}, waAttending:{en:'Joyfully attending',gu:'ખુશીથી હાજર રહીશું',mr:'आनंदाने उपस्थित राहू'},
-  waNotAttending:{en:'Unable to attend',gu:'હાજર રહી શકીશું નહીં',mr:'उपस्थित राहणे शक्य नाही'},
-  waGuestCount:{en:'Number of guests',gu:'મહેમાનોની સંખ્યા',mr:'पाहुण्यांची संख्या'}
-};
+    /* strings: en / gu / mr */
+    const T = {
+      rsvpIntro: {
+        en: 'We would be honoured by your presence as we begin our forever.<br>Please let us know if you can join us.',
+        gu: 'અમારા નવા જીવનની શરૂઆતમાં આપની હાજરી અમારું સન્માન હશે.<br>કૃપા કરી જણાવશો કે આપ આવી શકશો કે નહીં.',
+        mr: 'आमच्या नव्या आयुष्याच्या सुरुवातीला तुमची उपस्थिती आमचा सन्मान असेल.<br>कृपया तुम्ही येऊ शकाल का ते कळवा.'
+      },
+      namePh: { en: 'Your name', gu: 'તમારું નામ', mr: 'तुमचे नाव' },
+      guests: { en: 'NUMBER OF GUESTS', gu: 'મહેમાનોની સંખ્યા', mr: 'पाहुण्यांची संख्या' },
+      yes: { en: '✦ Yes, we will be there', gu: '✦ હા, અમે આવીશું', mr: '✦ होय, आम्ही येऊ' },
+      no: { en: 'Sorry, we can’t make it', gu: 'માફ કરશો, અમે નહીં આવી શકીએ', mr: 'क्षमस्व, आम्ही येऊ शकणार नाही' },
+      waHint: { en: 'Opens WhatsApp with your reply ready to send', gu: 'WhatsApp ખૂલશે, જવાબ તૈયાર હશે', mr: 'WhatsApp उघडेल, उत्तर तयार असेल' },
+      waNameRequired: { en: 'Please enter your name before sending your RSVP.', gu: 'RSVP મોકલતા પહેલાં કૃપા કરીને તમારું નામ લખો.', mr: 'RSVP पाठवण्यापूर्वी कृपया तुमचे नाव लिहा.' },
+      waGuestsInvalid: { en: 'Please enter a guest count between 1 and 20.', gu: 'કૃપા કરીને 1 થી 20 વચ્ચે મહેમાનોની સંખ્યા લખો.', mr: 'कृपया 1 ते 20 दरम्यान पाहुण्यांची संख्या लिहा.' },
+      waSending: { en: 'Opening WhatsApp with your RSVP…', gu: 'તમારા RSVP સાથે WhatsApp ખોલી રહ્યું છે…', mr: 'तुमच्या RSVP सह WhatsApp उघडत आहे…' },
+      waMessageTitle: { en: 'Wedding RSVP — Mrunmayi & Jaymin', gu: 'લગ્ન RSVP — મૃણ્મયી અને જયમીન', mr: 'लग्न RSVP — मृण्मयी आणि जयमीन' },
+      waName: { en: 'Name', gu: 'નામ', mr: 'नाव' }, waAttending: { en: 'Joyfully attending', gu: 'ખુશીથી હાજર રહીશું', mr: 'आनंदाने उपस्थित राहू' },
+      waNotAttending: { en: 'Unable to attend', gu: 'હાજર રહી શકીશું નહીં', mr: 'उपस्थित राहणे शक्य नाही' },
+      waGuestCount: { en: 'Number of guests', gu: 'મહેમાનોની સંખ્યા', mr: 'पाहुण्यांची संख्या' }
+    };
 
-/* text found in the page (matched by its English text) -> [gujarati, marathi] */
-const D = {
-  'THE COUPLE':['વર-વધૂ','वधू-वर'], 'OUR JOURNEY':['અમારી સફર','आमचा प्रवास'],
-  'The Love Story':['પ્રેમ <span>કહાની</span>','प्रेम <span>कहाणी</span>'],
-  'HOW IT ALL BEGAN':['બધું કેવી રીતે શરૂ થયું','सगळं कसं सुरू झालं'],
-  'The First Meeting':['પહેલી મુલાકાત','पहिली भेट'], 'Coffee & Conversations':['કૉફી અને વાતો','कॉफी आणि गप्पा'],
-  'The Proposal':['પ્રપોઝલ','प्रपोज'], 'The Engagement':['સગાઈ','साखरपुडा'], 'The Wedding':['લગ્ન','लग्न'],
-  'THE CELEBRATIONS':['ઉત્સવો','सोहळे'], 'Wedding Events':['લગ્ન <span>કાર્યક્રમો</span>','विवाह <span>कार्यक्रम</span>'],
-  'JOIN US FOR EVERY JOYFUL MOMENT':['દરેક આનંદભર્યા પળમાં અમારી સાથે જોડાઓ','प्रत्येक आनंदाच्या क्षणी आमच्यासोबत या'],
-  'Engagement Ceremony':['સગાઈ સમારોહ','साखरपुडा'], 'Garba Night':['ગરબા નાઇટ','गरबा नाईट'],
-  'Wedding Ceremony':['લગ્ન વિધિ','विवाह सोहळा'], 'Reception':['રિસેપ્શન','रिसेप्शन'],
-  'WITH LOVE':['પ્રેમ સાથે','प्रेमासह'], 'Your Blessings Are Our Gift':['આપના આશીર્વાદ જ અમારી ભેટ','तुमचे आशीर्वाद हीच आमची भेट'],
-  'YOU\'RE INVITED':['આપ આમંત્રિત છો','तुम्ही आमंत्रित आहात'], 'RSVP Kindly':['કૃપા કરી <span>જણાવશો</span>','कृपया <span>कळवा</span>'],
-  'PLEASE RESPOND BY December 10TH, 2026':['10 ડિસેમ્બર, 2026 સુધીમાં જવાબ આપશો','10 डिसेंबर, 2026 पर्यंत कळवा'],
-  'FIND US':['અમને શોધો','आम्हाला शोधा'], 'The Venue':['કાર્યક્રમ <span>સ્થળ</span>','कार्यक्रम <span>स्थळ</span>'],
-  'WHERE FOREVER BEGINS':['જ્યાં સાથે જીવનની શરૂઆત થાય છે','जिथे आयुष्यभराची साथ सुरू होते'],
-  'CEREMONY VENUE':['વિધિ સ્થળ','विवाह स्थळ'], 'ADDRESS':['સરનામું','पत्ता'], 'DATE & TIME':['તારીખ અને સમય','तारीख आणि वेळ'],
-  'DRESS CODE':['પોશાક','पोशाख'], 'CONTACT':['સંપર્ક','संपर्क'],
-  'THE FIRST MEETING':['પહેલી મુલાકાત','पहिली भेट'],
-  'Coffee & Conversations':['કૉફી અને વાતો','कॉफी आणि गप्पा'],
-  'The Proposal':['પ્રસ્તાવ','प्रस्ताव'],
-  'The Engagement':['સગાઈ','साखरपुडा'],
-  'The Wedding':['લગ્ન','लग्न'],
-  'The Ring':['વીંટી','अंगठी'],
-  'Sacred Pheras':['પવિત્ર ફેરા','पवित्र फेरे'],
-  'Varmala Moment':['વરમાળા પ્રસંગ','वरमाला सोहळा'],
-  'Mrunmayi & Jaymin — Under the Sacred Mandap':['પવિત્ર મંડપમાં મૃણ્મયી અને જયમીન','पवित्र मंडपात मृण्मयी आणि जयमीन'],
-  'Haldi — Golden Joy':['હળદી — સુવર્ણ આનંદ','हळद — सुवर्ण आनंद'],
-  'Sangeet Celebrations':['સંગીતની ઉજવણી','संगीत सोहळा'],
-  'SAVE THE DATE':['તારીખ યાદ રાખો','तारीख लक्षात ठेवा'],
-  'MADE WITH LOVE':['પ્રેમથી બનાવ્યું','प्रेमाने बनवले'],
-  'SCROLL TO ENTER':['આમંત્રણ જોવા સ્ક્રોલ કરો','आमंत्रण पाहण्यासाठी स्क्रोल करा'],
-  'WITH DIVINE BLESSINGS':['દિવ્ય આશીર્વાદ સાથે','दैवी आशीर्वादाने'],
-  'Invited To':['આમંત્રિત','निमंत्रित'],
-  'With Love & Blessings':['પ્રેમ અને આશીર્વાદ સાથે','प्रेम आणि आशीर्वादांसह'],
-  'TAP FOR DIRECTIONS':['દિશા મેળવવા ટેપ કરો','दिशा पाहण्यासाठी टॅप करा'],
-  'Get Directions':['દિશા મેળવો','मार्ग मिळवा'],
-  'Add to Calendar':['કૅલેન્ડરમાં ઉમેરો','कॅलेंडरमध्ये जोडा'],
-  'Traditional Indian Attire preferred':['પરંપરાગત ભારતીય વસ્ત્રોને પ્રાધાન્ય','पारंपरिक भारतीय पोशाख प्राधान्याने'],
-  'Ethnic / Festive Western welcome':['એથનિક / ઉત્સવી વેસ્ટર્ન વસ્ત્રોનું સ્વાગત','पारंपरिक / उत्सवी वेस्टर्न पोशाख स्वागतार्ह'],
-  'Two hearts, one forever — we thank you for being part of our story':['બે હૃદય, એક જીવનભરનો સાથ — અમારી કહાનીનો ભાગ બનવા બદલ આભાર','दोन हृदये, एक कायमची साथ — आमच्या कहाणीचा भाग झाल्याबद्दल धन्यवाद'],
-  'A chance encounter at a mutual friend\'s Classes in Mumbai. One moment, two strangers — and a smile that changed everything forever.':['મુંબઈમાં એક પરિચિત મિત્રના ક્લાસમાં થયેલી અચાનક મુલાકાત. એક ક્ષણ, બે અજાણ્યા લોકો — અને એક સ્મિતે બધું હંમેશ માટે બદલી નાખ્યું.','मुंबईत एका मित्राच्या क्लासमध्ये झालेली अनपेक्षित भेट. एक क्षण, दोन अनोळखी व्यक्ती — आणि एका स्मिताने सर्व काही कायमचे बदलले.'],
-  'Long evenings, longer conversations. Two hearts discovered they were speaking the same language all along.':['લાંબી સાંજ અને તેનાથી પણ લાંબી વાતો. બે હૃદયોને સમજાયું કે તેઓ હંમેશાં એક જ ભાષા બોલતાં હતાં.','लांब संध्याकाळी आणि त्याहून लांब गप्पा. दोन हृदयांना उमगले की ती सुरुवातीपासूनच एकच भाषा बोलत होती.'],
-  'Against the backdrop of a thousand lanterns floating into the night sky, Mrunmayi asked Jaymin to be her forever. He said yes before she finished the question.':['રાત્રિના આકાશમાં તરતા હજારો દીવાઓની સાક્ષીએ, મૃણ્મયીએ જયમીનને જીવનભરનો સાથ માંગ્યો. તેનો પ્રશ્ન પૂરો થાય તે પહેલાં જ તેણે હા કહી દીધી.','रात्रीच्या आकाशात तरंगणाऱ्या हजारो कंदिलांच्या साक्षीने मृण्मयीने जयमीनला आयुष्यभराची साथ मागितली. तिचा प्रश्न पूर्ण होण्याआधीच त्याने होकार दिला.'],
-  'Surrounded by family, love, and the scent of marigolds — two families became one. The journey to forever had officially begun.':['कુટુંબ, પ્રેમ અને ગલગોટાની સુગંધ વચ્ચે — બે પરિવારો એક બન્યા. જીવનભરની સફરની સત્તાવાર શરૂઆત થઈ.','कुटुंब, प्रेम आणि झेंडूच्या सुगंधात — दोन कुटुंबे एक झाली. कायमच्या सहजीवनाचा प्रवास अधिकृतपणे सुरू झाला.'],
-  'And now, under sacred skies and the blessings of the divine, their forever begins. We couldn\'t be more honored to share this moment with you.':['અને હવે, પવિત્ર આકાશ અને ઈશ્વરના આશીર્વાદ હેઠળ, તેમના જીવનભરના સાથની શરૂઆત થાય છે. આ પળ આપની સાથે વહેંચવાનો અમને આનંદ છે.','आणि आता, पवित्र आकाशाखाली आणि परमेश्वराच्या आशीर्वादाने त्यांच्या कायमच्या सहजीवनाची सुरुवात होत आहे. हा क्षण तुमच्यासोबत साजरा करताना आम्हाला आनंद होत आहे.'],
-  'Your presence and your blessings mean the world to us, and we truly need nothing more. Should you wish to bless us with something extra, a little cash to help us start our new home together would be the sweetest gift of all. 🪔':['આપની હાજરી અને આશીર્વાદ અમારા માટે અમૂલ્ય છે; અમને બીજું કંઈ જ જોઈતું નથી. છતાં આપ કંઈક ભેટ આપવા ઇચ્છો, તો અમારા નવા ઘરની શરૂઆત માટે થોડી રોકડ રકમ સૌથી મીઠી ભેટ રહેશે. 🪔','तुमची उपस्थिती आणि आशीर्वाद आमच्यासाठी अनमोल आहेत; आम्हाला आणखी काही नको. तरीही काही भेट द्यावीशी वाटल्यास, आमच्या नव्या घराच्या सुरुवातीसाठी थोडी रोख रक्कम ही सर्वात गोड भेट ठरेल. 🪔'],
-  'We would be honoured by your presence as we begin our forever. Please let us know you\'re coming by filling out our RSVP form.':['आमच्या नव्या आयुष्याच्या सुरुवातीला तुमची उपस्थिती आमच्यासाठी सन्मानाची गोष्ट असेल. कृपया RSVP फॉर्म भरून तुमची उपस्थिती कळवा.','आमच्या नव्या आयुष्याच्या सुरुवातीला तुमची उपस्थिती आमच्यासाठी सन्मानाची बाब असेल. कृपया RSVP फॉर्म भरून तुम्ही येणार आहात का ते कळवा.'],
-  'Two souls, one destiny. From the moment our paths crossed, the universe conspired to write our forever story — and now, we invite you to witness our beginning.':['બે આત્માઓ, એક ભાગ્ય. અમારા રસ્તા મળ્યા ત્યારથી જ જાણે બ્રહ્માંડ અમારી જીવનભરની કહાની લખી રહ્યું હતું — હવે અમારી નવી શરૂઆતના સાક્ષી બનવા આપને આમંત્રણ છે.','दोन जीव, एक नियती. आमचे मार्ग जुळले त्या क्षणापासून जणू विश्वाने आमची कायमची कहाणी लिहायला सुरुवात केली — आता आमच्या नव्या सुरुवातीचे साक्षीदार होण्यासाठी तुमचे स्वागत आहे.'],
-  'Traditional Indian Attire preferred':['પરંપરાગત ભારતીય પોશાકને પ્રાધાન્ય','पारंपरिक भारतीय पोशाखास प्राधान्य'],
-  'Ethnic / Festive Western welcome':['એથનિક / ઉત્સવી વેસ્ટર્ન પોશાકનું સ્વાગત','पारंपरिक / उत्सवी वेस्टर्न पोशाख स्वागतार्ह'],
-  'TAP FOR DIRECTIONS':['દિશા મેળવવા ટેપ કરો','मार्ग पाहण्यासाठी टॅप करा']
-  
-};
-/* elements replaced by selector -> [gujarati, marathi] */
-const SH = '✦ &nbsp; ॥ श्री गणेशाय नमः ॥ &nbsp; ✦<br>वक्रतुंड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥<br>';
-const SP = {
-  '.loader-text':['તમારું આમંત્રણ તૈયાર થઈ રહ્યું છે','तुमचे आमंत्रण तयार होत आहे'],
-  '.envelope-hint':['✦ &nbsp; ખોલવા સીલ ટેપ કરો &nbsp; ✦','✦ &nbsp; उघडण्यासाठी सीलवर टॅप करा &nbsp; ✦'],
-  '.scroll-indicator span':['પ્રવેશ માટે સ્ક્રોલ કરો','प्रवेशासाठी स्क्रोल करा'],
-  '.shreeGanesh':[SH+'ભગવાન ગણેશજીના આશીર્વાદ સાથે, અમારા પરિવારો સાથે મળીને, આપને અમારા લગ્નોત્સવમાં હાર્દિક નિમંત્રણ છે',
-                  SH+'श्री गणेशाच्या आशीर्वादाने, आमच्या कुटुंबांसह, तुम्हाला आमच्या विवाहसोहळ्यास सहर्ष आमंत्रित करतो'],
-  '.hero-names':['મૃણ્મયી<span class="hero-ampersand">&</span>જયમીન','मृण्मयी<span class="hero-ampersand">&</span>जयमीन'],
-  '.couple-message':['“બે આત્માઓ, એક ભાગ્ય. અમારા રસ્તા મળ્યા ત્યારથી જ જાણે બ્રહ્માંડ અમારી જીવનભરની કહાની લખી રહ્યું હતું — હવે અમારી નવી શરૂઆતના સાક્ષી બનવા આપને આમંત્રણ છે.”','“दोन जीव, एक नियती. आमचे मार्ग जुळले त्या क्षणापासून जणू विश्वाने आमची कायमची कहाणी लिहायला सुरुवात केली — आता आमच्या नव्या सुरुवातीचे साक्षीदार होण्यासाठी तुमचे स्वागत आहे.”'],
-  '.family-names':['<p><strong>મૃણ્મયી</strong> — શાંતારામ અને શુભદા નારસુલેની પુત્રી<br>કોંકણ, મહારાષ્ટ્રથી</p><p style="margin-top:0.5rem;"><strong>જયમીન</strong> — જયેશ અને વર્ષા મેવાડાનો પુત્ર<br>કુકરવાડા, ગુજરાતથી</p>','<p><strong>मृण्मयी</strong> — शांतराम आणि शुभदा नरसुले यांची कन्या<br>कोकण, महाराष्ट्र येथून</p><p style="margin-top:0.5rem;"><strong>जयमीन</strong> — जयेश आणि वर्षा मेवाडा यांचा मुलगा<br>कुकरवाडा, गुजरात येथून</p>'],
-  '.blessings-text':['આપની હાજરી અને આશીર્વાદ જ અમારા માટે સર્વસ્વ છે, અમને બીજું કંઈ જોઈતું નથી.<br><br>જો આપ કંઈક ભેટ આપવા ઇચ્છતા હો, તો નવા ઘરની શરૂઆત માટે થોડી રોકડ રકમ અમારા માટે સૌથી મધુર ભેટ હશે. 🪔',
-                     'तुमची उपस्थिती आणि आशीर्वाद हेच आमच्यासाठी सर्वस्व आहे, आम्हाला आणखी काही नको.<br><br>तरीही काही द्यावेसे वाटल्यास, नव्या घराच्या सुरुवातीसाठी थोडी रोख रक्कम ही आमच्यासाठी सर्वात गोड भेट असेल. 🪔']
-};
+    /* text found in the page (matched by its English text) -> [gujarati, marathi] */
+    const D = {
+      'THE COUPLE': ['વર-વધૂ', 'वधू-वर'], 'OUR JOURNEY': ['અમારી સફર', 'आमचा प्रवास'],
+      'The Love Story': ['પ્રેમ <span>કહાની</span>', 'प्रेम <span>कहाणी</span>'],
+      'HOW IT ALL BEGAN': ['બધું કેવી રીતે શરૂ થયું', 'सगळं कसं सुरू झालं'],
+      'The First Meeting': ['પહેલી મુલાકાત', 'पहिली भेट'], 'Coffee & Conversations': ['કૉફી અને વાતો', 'कॉफी आणि गप्पा'],
+      'The Proposal': ['પ્રપોઝલ', 'प्रपोज'], 'The Engagement': ['સગાઈ', 'साखरपुडा'], 'The Wedding': ['લગ્ન', 'लग्न'],
+      'THE CELEBRATIONS': ['ઉત્સવો', 'सोहळे'], 'Wedding Events': ['લગ્ન <span>કાર્યક્રમો</span>', 'विवाह <span>कार्यक्रम</span>'],
+      'JOIN US FOR EVERY JOYFUL MOMENT': ['દરેક આનંદભર્યા પળમાં અમારી સાથે જોડાઓ', 'प्रत्येक आनंदाच्या क्षणी आमच्यासोबत या'],
+      'Engagement Ceremony': ['સગાઈ સમારોહ', 'साखरपुडा'], 'Garba Night': ['ગરબા નાઇટ', 'गरबा नाईट'],
+      'Wedding Ceremony': ['લગ્ન વિધિ', 'विवाह सोहळा'], 'Reception': ['રિસેપ્શન', 'रिसेप्शन'],
+      'WITH LOVE': ['પ્રેમ સાથે', 'प्रेमासह'], 'Your Blessings Are Our Gift': ['આપના આશીર્વાદ જ અમારી ભેટ', 'तुमचे आशीर्वाद हीच आमची भेट'],
+      'YOU\'RE INVITED': ['આપ આમંત્રિત છો', 'तुम्ही आमंत्रित आहात'], 'RSVP Kindly': ['કૃપા કરી <span>જણાવશો</span>', 'कृपया <span>कळवा</span>'],
+      'PLEASE RESPOND BY December 10TH, 2026': ['10 ડિસેમ્બર, 2026 સુધીમાં જવાબ આપશો', '10 डिसेंबर, 2026 पर्यंत कळवा'],
+      'FIND US': ['અમને શોધો', 'आम्हाला शोधा'], 'The Venue': ['કાર્યક્રમ <span>સ્થળ</span>', 'कार्यक्रम <span>स्थळ</span>'],
+      'WHERE FOREVER BEGINS': ['જ્યાં સાથે જીવનની શરૂઆત થાય છે', 'जिथे आयुष्यभराची साथ सुरू होते'],
+      'CEREMONY VENUE': ['વિધિ સ્થળ', 'विवाह स्थळ'], 'ADDRESS': ['સરનામું', 'पत्ता'], 'DATE & TIME': ['તારીખ અને સમય', 'तारीख आणि वेळ'],
+      'DRESS CODE': ['પોશાક', 'पोशाख'], 'CONTACT': ['સંપર્ક', 'संपर्क'],
+      'THE FIRST MEETING': ['પહેલી મુલાકાત', 'पहिली भेट'],
+      'Coffee & Conversations': ['કૉફી અને વાતો', 'कॉफी आणि गप्पा'],
+      'The Proposal': ['પ્રસ્તાવ', 'प्रस्ताव'],
+      'The Engagement': ['સગાઈ', 'साखरपुडा'],
+      'The Wedding': ['લગ્ન', 'लग्न'],
+      'The Ring': ['વીંટી', 'अंगठी'],
+      'Sacred Pheras': ['પવિત્ર ફેરા', 'पवित्र फेरे'],
+      'Varmala Moment': ['વરમાળા પ્રસંગ', 'वरमाला सोहळा'],
+      'Mrunmayi & Jaymin — Under the Sacred Mandap': ['પવિત્ર મંડપમાં મૃણ્મયી અને જયમીન', 'पवित्र मंडपात मृण्मयी आणि जयमीन'],
+      'Haldi — Golden Joy': ['હળદી — સુવર્ણ આનંદ', 'हळद — सुवर्ण आनंद'],
+      'Sangeet Celebrations': ['સંગીતની ઉજવણી', 'संगीत सोहळा'],
+      'SAVE THE DATE': ['તારીખ યાદ રાખો', 'तारीख लक्षात ठेवा'],
+      'MADE WITH LOVE': ['પ્રેમથી બનાવ્યું', 'प्रेमाने बनवले'],
+      'SCROLL TO ENTER': ['આમંત્રણ જોવા સ્ક્રોલ કરો', 'आमंत्रण पाहण्यासाठी स्क्रोल करा'],
+      'WITH DIVINE BLESSINGS': ['દિવ્ય આશીર્વાદ સાથે', 'दैवी आशीर्वादाने'],
+      'Invited To': ['આમંત્રિત', 'निमंत्रित'],
+      'With Love & Blessings': ['પ્રેમ અને આશીર્વાદ સાથે', 'प्रेम आणि आशीर्वादांसह'],
+      'TAP FOR DIRECTIONS': ['દિશા મેળવવા ટેપ કરો', 'दिशा पाहण्यासाठी टॅप करा'],
+      'Get Directions': ['દિશા મેળવો', 'मार्ग मिळवा'],
+      'Add to Calendar': ['કૅલેન્ડરમાં ઉમેરો', 'कॅलेंडरमध्ये जोडा'],
+      'Traditional Indian Attire preferred': ['પરંપરાગત ભારતીય વસ્ત્રોને પ્રાધાન્ય', 'पारंपरिक भारतीय पोशाख प्राधान्याने'],
+      'Ethnic / Festive Western welcome': ['એથનિક / ઉત્સવી વેસ્ટર્ન વસ્ત્રોનું સ્વાગત', 'पारंपरिक / उत्सवी वेस्टर्न पोशाख स्वागतार्ह'],
+      'Two hearts, one forever — we thank you for being part of our story': ['બે હૃદય, એક જીવનભરનો સાથ — અમારી કહાનીનો ભાગ બનવા બદલ આભાર', 'दोन हृदये, एक कायमची साथ — आमच्या कहाणीचा भाग झाल्याबद्दल धन्यवाद'],
+      'A chance encounter at a mutual friend\'s Classes in Mumbai. One moment, two strangers — and a smile that changed everything forever.': ['મુંબઈમાં એક પરિચિત મિત્રના ક્લાસમાં થયેલી અચાનક મુલાકાત. એક ક્ષણ, બે અજાણ્યા લોકો — અને એક સ્મિતે બધું હંમેશ માટે બદલી નાખ્યું.', 'मुंबईत एका मित्राच्या क्लासमध्ये झालेली अनपेक्षित भेट. एक क्षण, दोन अनोळखी व्यक्ती — आणि एका स्मिताने सर्व काही कायमचे बदलले.'],
+      'Long evenings, longer conversations. Two hearts discovered they were speaking the same language all along.': ['લાંબી સાંજ અને તેનાથી પણ લાંબી વાતો. બે હૃદયોને સમજાયું કે તેઓ હંમેશાં એક જ ભાષા બોલતાં હતાં.', 'लांब संध्याकाळी आणि त्याहून लांब गप्पा. दोन हृदयांना उमगले की ती सुरुवातीपासूनच एकच भाषा बोलत होती.'],
+      'Against the backdrop of a thousand lanterns floating into the night sky, Mrunmayi asked Jaymin to be her forever. He said yes before she finished the question.': ['રાત્રિના આકાશમાં તરતા હજારો દીવાઓની સાક્ષીએ, મૃણ્મયીએ જયમીનને જીવનભરનો સાથ માંગ્યો. તેનો પ્રશ્ન પૂરો થાય તે પહેલાં જ તેણે હા કહી દીધી.', 'रात्रीच्या आकाशात तरंगणाऱ्या हजारो कंदिलांच्या साक्षीने मृण्मयीने जयमीनला आयुष्यभराची साथ मागितली. तिचा प्रश्न पूर्ण होण्याआधीच त्याने होकार दिला.'],
+      'Surrounded by family, love, and the scent of marigolds — two families became one. The journey to forever had officially begun.': ['कુટુંબ, પ્રેમ અને ગલગોટાની સુગંધ વચ્ચે — બે પરિવારો એક બન્યા. જીવનભરની સફરની સત્તાવાર શરૂઆત થઈ.', 'कुटुंब, प्रेम आणि झेंडूच्या सुगंधात — दोन कुटुंबे एक झाली. कायमच्या सहजीवनाचा प्रवास अधिकृतपणे सुरू झाला.'],
+      'And now, under sacred skies and the blessings of the divine, their forever begins. We couldn\'t be more honored to share this moment with you.': ['અને હવે, પવિત્ર આકાશ અને ઈશ્વરના આશીર્વાદ હેઠળ, તેમના જીવનભરના સાથની શરૂઆત થાય છે. આ પળ આપની સાથે વહેંચવાનો અમને આનંદ છે.', 'आणि आता, पवित्र आकाशाखाली आणि परमेश्वराच्या आशीर्वादाने त्यांच्या कायमच्या सहजीवनाची सुरुवात होत आहे. हा क्षण तुमच्यासोबत साजरा करताना आम्हाला आनंद होत आहे.'],
+      'Your presence and your blessings mean the world to us, and we truly need nothing more. Should you wish to bless us with something extra, a little cash to help us start our new home together would be the sweetest gift of all. 🪔': ['આપની હાજરી અને આશીર્વાદ અમારા માટે અમૂલ્ય છે; અમને બીજું કંઈ જ જોઈતું નથી. છતાં આપ કંઈક ભેટ આપવા ઇચ્છો, તો અમારા નવા ઘરની શરૂઆત માટે થોડી રોકડ રકમ સૌથી મીઠી ભેટ રહેશે. 🪔', 'तुमची उपस्थिती आणि आशीर्वाद आमच्यासाठी अनमोल आहेत; आम्हाला आणखी काही नको. तरीही काही भेट द्यावीशी वाटल्यास, आमच्या नव्या घराच्या सुरुवातीसाठी थोडी रोख रक्कम ही सर्वात गोड भेट ठरेल. 🪔'],
+      'We would be honoured by your presence as we begin our forever. Please let us know you\'re coming by filling out our RSVP form.': ['आमच्या नव्या आयुष्याच्या सुरुवातीला तुमची उपस्थिती आमच्यासाठी सन्मानाची गोष्ट असेल. कृपया RSVP फॉर्म भरून तुमची उपस्थिती कळवा.', 'आमच्या नव्या आयुष्याच्या सुरुवातीला तुमची उपस्थिती आमच्यासाठी सन्मानाची बाब असेल. कृपया RSVP फॉर्म भरून तुम्ही येणार आहात का ते कळवा.'],
+      'Two souls, one destiny. From the moment our paths crossed, the universe conspired to write our forever story — and now, we invite you to witness our beginning.': ['બે આત્માઓ, એક ભાગ્ય. અમારા રસ્તા મળ્યા ત્યારથી જ જાણે બ્રહ્માંડ અમારી જીવનભરની કહાની લખી રહ્યું હતું — હવે અમારી નવી શરૂઆતના સાક્ષી બનવા આપને આમંત્રણ છે.', 'दोन जीव, एक नियती. आमचे मार्ग जुळले त्या क्षणापासून जणू विश्वाने आमची कायमची कहाणी लिहायला सुरुवात केली — आता आमच्या नव्या सुरुवातीचे साक्षीदार होण्यासाठी तुमचे स्वागत आहे.'],
+      'Traditional Indian Attire preferred': ['પરંપરાગત ભારતીય પોશાકને પ્રાધાન્ય', 'पारंपरिक भारतीय पोशाखास प्राधान्य'],
+      'Ethnic / Festive Western welcome': ['એથનિક / ઉત્સવી વેસ્ટર્ન પોશાકનું સ્વાગત', 'पारंपरिक / उत्सवी वेस्टर्न पोशाख स्वागतार्ह'],
+      'TAP FOR DIRECTIONS': ['દિશા મેળવવા ટેપ કરો', 'मार्ग पाहण्यासाठी टॅप करा']
 
-const items = [];
-function reg(el, tr, deco){ if (el) items.push({ el, en: el.innerHTML, tr, deco }); }
+    };
+    /* elements replaced by selector -> [gujarati, marathi] */
+    const SH = '✦ &nbsp; ॥ श्री गणेशाय नमः ॥ &nbsp; ✦<br>वक्रतुंड महाकाय सूर्यकोटि समप्रभ ।<br>निर्विघ्नं कुरु मे देव सर्वकार्येषु सर्वदा ॥<br>';
+    const SP = {
+      '.loader-text': ['તમારું આમંત્રણ તૈયાર થઈ રહ્યું છે', 'तुमचे आमंत्रण तयार होत आहे'],
+      '.envelope-hint': ['✦ &nbsp; ખોલવા સીલ ટેપ કરો &nbsp; ✦', '✦ &nbsp; उघडण्यासाठी सीलवर टॅप करा &nbsp; ✦'],
+      '.scroll-indicator span': ['પ્રવેશ માટે સ્ક્રોલ કરો', 'प्रवेशासाठी स्क्रोल करा'],
+      '.shreeGanesh': [SH + 'ભગવાન ગણેશજીના આશીર્વાદ સાથે, અમારા પરિવારો સાથે મળીને, આપને અમારા લગ્નોત્સવમાં હાર્દિક નિમંત્રણ છે',
+      SH + 'श्री गणेशाच्या आशीर्वादाने, आमच्या कुटुंबांसह, तुम्हाला आमच्या विवाहसोहळ्यास सहर्ष आमंत्रित करतो'],
+      '.hero-names': ['મૃણ્મયી<span class="hero-ampersand">&</span>જયમીન', 'मृण्मयी<span class="hero-ampersand">&</span>जयमीन'],
+      '.couple-message': ['“બે આત્માઓ, એક ભાગ્ય. અમારા રસ્તા મળ્યા ત્યારથી જ જાણે બ્રહ્માંડ અમારી જીવનભરની કહાની લખી રહ્યું હતું — હવે અમારી નવી શરૂઆતના સાક્ષી બનવા આપને આમંત્રણ છે.”', '“दोन जीव, एक नियती. आमचे मार्ग जुळले त्या क्षणापासून जणू विश्वाने आमची कायमची कहाणी लिहायला सुरुवात केली — आता आमच्या नव्या सुरुवातीचे साक्षीदार होण्यासाठी तुमचे स्वागत आहे.”'],
+      '.family-names': ['<p><strong>મૃણ્મયી</strong> — શાંતારામ અને શુભદા નારસુલેની પુત્રી<br>કોંકણ, મહારાષ્ટ્રથી</p><p style="margin-top:0.5rem;"><strong>જયમીન</strong> — જયેશ અને વર્ષા મેવાડાનો પુત્ર<br>કુકરવાડા, ગુજરાતથી</p>', '<p><strong>मृण्मयी</strong> — शांतराम आणि शुभदा नरसुले यांची कन्या<br>कोकण, महाराष्ट्र येथून</p><p style="margin-top:0.5rem;"><strong>जयमीन</strong> — जयेश आणि वर्षा मेवाडा यांचा मुलगा<br>कुकरवाडा, गुजरात येथून</p>'],
+      '.blessings-text': ['આપની હાજરી અને આશીર્વાદ જ અમારા માટે સર્વસ્વ છે, અમને બીજું કંઈ જોઈતું નથી.<br><br>જો આપ કંઈક ભેટ આપવા ઇચ્છતા હો, તો નવા ઘરની શરૂઆત માટે થોડી રોકડ રકમ અમારા માટે સૌથી મધુર ભેટ હશે. 🪔',
+        'तुमची उपस्थिती आणि आशीर्वाद हेच आमच्यासाठी सर्वस्व आहे, आम्हाला आणखी काही नको.<br><br>तरीही काही द्यावेसे वाटल्यास, नव्या घराच्या सुरुवातीसाठी थोडी रोख रक्कम ही आमच्यासाठी सर्वात गोड भेट असेल. 🪔']
+    };
 
-/* ---------- language ---------- */
-function setLang(l){
-  if (!['en','gu','mr'].includes(l)) l = 'en';
-  LANG = l; document.documentElement.lang = l;
-  try { localStorage.setItem('lang', l); } catch(e) {}
-  const i = l === 'gu' ? 0 : 1;
-  items.forEach(it => {
-    it.el.innerHTML = l === 'en' ? it.en : (it.deco ? '❋ &nbsp; ' + it.tr[i] + ' &nbsp; ❋' : it.tr[i]);
-  });
-  document.querySelectorAll('[data-k]').forEach(e => { const entry = T[e.dataset.k]; if (entry && entry[l] !== undefined) e.innerHTML = entry[l]; });
-  document.querySelectorAll('[data-kph]').forEach(e => e.placeholder = T[e.dataset.kph][l]);
-  document.querySelectorAll('#lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
-}
+    const items = [];
+    function reg(el, tr, deco) { if (el) items.push({ el, en: el.innerHTML, tr, deco }); }
 
-/* ---------- WhatsApp RSVP ---------- */
-function sendRSVP(attending){
-  const nameEl = document.getElementById('wa-name');
-  const guestsEl = document.getElementById('wa-guests');
-  const statusEl = document.getElementById('wa-status');
-  const name = nameEl.value.trim();
-  const guests = Number(guestsEl.value);
-  if (!name) {
-    statusEl.textContent = T.waNameRequired[LANG];
-    nameEl.focus(); return;
-  }
-  if (!Number.isInteger(guests) || guests < 1 || guests > 20) {
-    statusEl.textContent = T.waGuestsInvalid[LANG];
-    guestsEl.focus(); return;
-  }
-  statusEl.textContent = T.waSending[LANG];
-  const lines = [
-    '🪔 ' + T.waMessageTitle[LANG] + ' (28 February 2027)',
-    '',
-    T.waName[LANG] + ': ' + name,
-    T.waAttending[LANG] + ': ' + (attending ? '✅' : '🙏'),
-    (attending ? T.waGuestCount[LANG] + ': ' + guests : '')
-  ].filter(Boolean);
-  const url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
-  const popup = window.open(url, '_blank');
-  if (!popup) window.location.href = url;
-}
+    /* ---------- language ---------- */
+    function setLang(l) {
+      if (!['en', 'gu', 'mr'].includes(l)) l = 'en';
+      LANG = l; document.documentElement.lang = l;
+      try { localStorage.setItem('lang', l); } catch (e) { }
+      const i = l === 'gu' ? 0 : 1;
+      items.forEach(it => {
+        it.el.innerHTML = l === 'en' ? it.en : (it.deco ? '❋ &nbsp; ' + it.tr[i] + ' &nbsp; ❋' : it.tr[i]);
+      });
+      document.querySelectorAll('[data-k]').forEach(e => { const entry = T[e.dataset.k]; if (entry && entry[l] !== undefined) e.innerHTML = entry[l]; });
+      document.querySelectorAll('[data-kph]').forEach(e => e.placeholder = T[e.dataset.kph][l]);
+      document.querySelectorAll('#lang-switch button').forEach(b => b.classList.toggle('active', b.dataset.lang === l));
+    }
 
-/* ---------- init ---------- */
-(function initWeddingLanguage(){
-  const SEL = '#couple-section .section-label,.section-label,.section-title,.section-subtitle,.event-name,.timeline-title,.venue-detail-text strong,.timeline-desc,.footer-tagline,.gallery-caption,.rsvp-intro,.venue-detail-text span';
-  document.querySelectorAll(SEL).forEach(el => {
-    const k = el.textContent.replace(/[❋✦\u00a0]/g, ' ').replace(/\s+/g, ' ').trim();
-    if (D[k]) reg(el, D[k], el.classList.contains('section-label'));
-  });
-  Object.entries(SP).forEach(([selector, tr]) => reg(document.querySelector(selector), tr));
+    /* ---------- WhatsApp RSVP ---------- */
+    function sendRSVP(attending) {
+      const nameEl = document.getElementById('wa-name');
+      const guestsEl = document.getElementById('wa-guests');
+      const statusEl = document.getElementById('wa-status');
+      const name = nameEl.value.trim();
+      const guests = Number(guestsEl.value);
+      if (!name) {
+        statusEl.textContent = T.waNameRequired[LANG];
+        nameEl.focus(); return;
+      }
+      if (!Number.isInteger(guests) || guests < 1 || guests > 20) {
+        statusEl.textContent = T.waGuestsInvalid[LANG];
+        guestsEl.focus(); return;
+      }
+      statusEl.textContent = T.waSending[LANG];
+      const lines = [
+        '🪔 ' + T.waMessageTitle[LANG] + ' (28 February 2027)',
+        '',
+        T.waName[LANG] + ': ' + name,
+        T.waAttending[LANG] + ': ' + (attending ? '✅' : '🙏'),
+        (attending ? T.waGuestCount[LANG] + ': ' + guests : '')
+      ].filter(Boolean);
+      const url = 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+      const popup = window.open(url, '_blank');
+      if (!popup) window.location.href = url;
+    }
 
-  const qs = new URLSearchParams(location.search);
-  const guest = qs.get('guest');
-  if (guest) document.getElementById('wa-name').value = guest.trim();
-  if (qs.get('event') === 'engagement') {            // keep the old Google Form for engagement links
-    document.getElementById('wa-rsvp').style.display = 'none';
-    document.getElementById('old-rsvp').style.display = 'block';
-  }
+    /* ---------- init ---------- */
+    (function initWeddingLanguage() {
+      const SEL = '#couple-section .section-label,.section-label,.section-title,.section-subtitle,.event-name,.timeline-title,.venue-detail-text strong,.timeline-desc,.footer-tagline,.gallery-caption,.rsvp-intro,.venue-detail-text span';
+      document.querySelectorAll(SEL).forEach(el => {
+        const k = el.textContent.replace(/[❋✦\u00a0]/g, ' ').replace(/\s+/g, ' ').trim();
+        if (D[k]) reg(el, D[k], el.classList.contains('section-label'));
+      });
+      Object.entries(SP).forEach(([selector, tr]) => reg(document.querySelector(selector), tr));
 
-  const switcher = document.getElementById('lang-switch');
-  if (switcher) {
-    switcher.addEventListener('click', e => {
-      const button = e.target.closest('button[data-lang]');
-      if (button) { e.preventDefault(); e.stopPropagation(); setLang(button.dataset.lang); }
-    }, true);
-    switcher.querySelectorAll('button[data-lang]').forEach(button => {
-      button.setAttribute('type','button');
-      button.addEventListener('pointerup', e => { e.preventDefault(); setLang(button.dataset.lang); }, {passive:false});
-    });
-  }
-  let saved = 'en';
-  try { saved = localStorage.getItem('lang') || 'en'; } catch(e) {}
-  setLang(['en','gu','mr'].includes(saved) ? saved : 'en');
-})();
-    
+      const qs = new URLSearchParams(location.search);
+      const guest = qs.get('guest');
+      if (guest) document.getElementById('wa-name').value = guest.trim();
+      if (qs.get('event') === 'engagement') {
+        const waRsvp = document.getElementById('wa-rsvp');
+        const oldRsvp = document.getElementById('old-rsvp');
+
+        if (waRsvp) waRsvp.style.display = 'none';
+        if (oldRsvp) oldRsvp.style.display = 'block';
+      }
+
+      const switcher = document.getElementById('lang-switch');
+
+      if (switcher) {
+        switcher.querySelectorAll('button[data-lang]').forEach(button => {
+          button.type = 'button';
+
+          button.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            setLang(this.dataset.lang);
+          });
+        });
+      }
+      const params = new URLSearchParams(window.location.search);
+
+      let saved = params.get('lang');
+
+      if (!['en', 'gu', 'mr'].includes(saved)) {
+        try {
+          saved = localStorage.getItem('lang') || 'en';
+        } catch (e) {
+          saved = 'en';
+        }
+      }
+
+      setLang(saved);
+    })();
+
   </script>
 </body>
 
