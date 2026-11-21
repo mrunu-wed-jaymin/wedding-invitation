@@ -3085,16 +3085,22 @@
         if (D[k]) reg(el, D[k], el.classList.contains('section-label'));
       });
       Object.entries(SP).forEach(([selector, tr]) => reg(document.querySelector(selector), tr));
+      const params = new URLSearchParams(window.location.search);
+      const eventType = params.get('event') || 'wedding';
+      const guestName = params.get('guest') || '';
+      const urlLang = params.get('lang');
+      // const qs = new URLSearchParams(location.search);
+      // const guest = qs.get('guest');
+      const guestInput = document.getElementById('wa-name');
+      if (guestInput && guestName) {
+        guestInput.value = guestName.trim();
+      }
+      const weddingRSVP = document.getElementById('wa-rsvp');
+      const engagementRSVP = document.getElementById('old-rsvp');
 
-      const qs = new URLSearchParams(location.search);
-      const guest = qs.get('guest');
-      if (guest) document.getElementById('wa-name').value = guest.trim();
-      if (qs.get('event') === 'engagement') {
-        const waRsvp = document.getElementById('wa-rsvp');
-        const oldRsvp = document.getElementById('old-rsvp');
-
-        if (waRsvp) waRsvp.style.display = 'none';
-        if (oldRsvp) oldRsvp.style.display = 'block';
+      if (eventType === 'engagement') {
+        if (weddingRSVP) weddingRSVP.style.display = 'none';
+        if (engagementRSVP) engagementRSVP.style.display = 'block';
       }
 
       const switcher = document.getElementById('lang-switch');
@@ -3111,19 +3117,20 @@
           });
         });
       }
-      const params = new URLSearchParams(window.location.search);
 
-      let saved = params.get('lang');
+      let savedLang = 'en';
 
-      if (!['en', 'gu', 'mr'].includes(saved)) {
-        try {
-          saved = localStorage.getItem('lang') || 'en';
-        } catch (e) {
-          saved = 'en';
-        }
-      }
+      try {
+        savedLang = localStorage.getItem('lang') || 'en';
+      } catch (e) { }
 
-      setLang(saved);
+      const selectedLang = urlLang || savedLang;
+
+      setLang(
+        ['en', 'gu', 'mr'].includes(selectedLang)
+          ? selectedLang
+          : 'en'
+      );
     })();
 
   </script>
