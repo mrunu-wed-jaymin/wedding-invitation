@@ -2152,6 +2152,46 @@
     }
 
     @media(prefers-reduced-motion:reduce) {}
+
+    /* ===== ANIMATED LAYERED HERO (Image/hero/*) ===== */
+    #mandap-section{--aw:min(100vw,620px);min-height:100svh;padding:0}
+    #mandap-section .mandap-image-bg,#mandap-section .mandap-arch{display:none}
+    #mandap-section .hero-content{padding-top:calc(var(--aw)*770/1080);padding-bottom:calc(var(--aw)*600/1080);max-width:min(92vw,560px)}
+    #mandap-section .ganesha-img{width:110px}
+    .hero-art{position:absolute;left:50%;transform:translateX(-50%);width:var(--aw);pointer-events:none;z-index:1}
+    .hero-top{top:0;height:calc(var(--aw)*800/1080)}
+    .hero-bot{bottom:0;height:calc(var(--aw)*670/1080)}
+    .hero-art img{position:absolute;opacity:0;will-change:transform,opacity;user-select:none}
+    .play .groom{animation:heroInL 1.8s .2s cubic-bezier(.2,.8,.2,1) forwards}
+    .play .bride{animation:heroInR 1.8s .2s cubic-bezier(.2,.8,.2,1) forwards}
+    .play .cloth{transform-origin:50% 0;animation:heroDrop 1.7s 1.2s cubic-bezier(.3,1.4,.5,1) forwards,heroSwing 6s 3.2s ease-in-out infinite alternate}
+    .play .petal{animation:heroFade 1s calc(2s + var(--d)) forwards,heroDrift var(--t) calc(2.4s + var(--d)) ease-in-out infinite alternate}
+    .play .leaf{animation:heroLeaf 2.2s .6s cubic-bezier(.2,.8,.2,1) forwards,heroSway 7s 2.8s ease-in-out infinite alternate}
+    .leafL{transform-origin:0 100%}.leafR{transform-origin:100% 100%}
+    .leafR{animation-delay:.9s,3s!important}
+    @keyframes heroInL{from{opacity:0;transform:translateX(-16%)}to{opacity:1;transform:none}}
+    @keyframes heroInR{from{opacity:0;transform:translateX(16%)}to{opacity:1;transform:none}}
+    @keyframes heroDrop{from{opacity:0;transform:translateY(-35%) scaleY(.6)}to{opacity:1;transform:none}}
+    @keyframes heroSwing{from{transform:rotate(-1deg)}to{transform:rotate(1deg)}}
+    @keyframes heroFade{to{opacity:1}}
+    @keyframes heroDrift{from{transform:translate(0,0) rotate(0)}to{transform:translate(var(--dx),var(--dy)) rotate(var(--r))}}
+    @keyframes heroLeaf{from{opacity:0;transform:translate(-18%,22%) scale(.85)}to{opacity:1;transform:none}}
+    @keyframes heroSway{from{transform:rotate(-1.6deg)}to{transform:rotate(1.6deg)}}
+
+    /* ===== PAPER TEXTURE + SOFT COLOUR BLEND PER SECTION ===== */
+    :root{--paper:url(Image/hero/paper.jpg)}
+    body{background:#f7efe4 var(--paper) repeat;background-size:512px}
+    #envelope-section,#mandap-section,#couple-section,#love-story,#events-section,#blessings-section,#rsvp-section,#venue-section,footer{background-color:#f7efe4;background-repeat:no-repeat,repeat;background-size:100% 100%,512px}
+    #envelope-section{background-image:linear-gradient(160deg,rgba(249,212,184,.55),rgba(242,184,160,.65) 70%,rgba(232,160,128,.7)),var(--paper)}
+    #mandap-section{background-image:linear-gradient(180deg,rgba(232,201,122,.16),rgba(244,194,194,.18)),var(--paper)}
+    #couple-section{background-image:linear-gradient(180deg,rgba(244,194,194,.24),rgba(255,248,248,.05) 55%,rgba(242,169,126,.18)),var(--paper)}
+    #love-story{background-image:linear-gradient(180deg,rgba(242,169,126,.18),rgba(232,201,122,.20)),var(--paper)}
+    #events-section{background-image:linear-gradient(180deg,rgba(232,201,122,.22),rgba(247,184,196,.18)),var(--paper)}
+    #blessings-section{background-image:linear-gradient(180deg,rgba(247,184,196,.22),rgba(244,194,194,.10)),var(--paper)}
+    #rsvp-section{background-image:linear-gradient(160deg,rgba(139,175,124,.16),rgba(232,201,122,.14)),var(--paper)}
+    #venue-section{background-image:linear-gradient(180deg,rgba(242,169,126,.22),rgba(139,175,124,.14)),var(--paper)}
+    footer{background-image:linear-gradient(180deg,rgba(232,201,122,.10),rgba(242,169,126,.7)),var(--paper)}
+    @media (prefers-reduced-motion:reduce){.play .hero-art img{animation:heroFade .01s forwards!important}}
   </style>
 </head>
 
@@ -2219,6 +2259,32 @@
 
   <!-- MANDAP HERO -->
   <section id="mandap-section">
+    <div class="hero-art hero-top" aria-hidden="true">
+<img class="groom" src="Image/hero/groom.webp" alt="" style="left:0.00%;top:0.00%;width:44.17%;height:90.38%">
+<img class="bride" src="Image/hero/bride.webp" alt="" style="left:60.19%;top:0.00%;width:39.81%;height:91.38%">
+<img class="cloth" src="Image/hero/cloth.webp" alt="" style="left:44.07%;top:0.00%;width:35.93%;height:50.12%">
+<img class="petal" src="Image/hero/petal00.webp" alt="" style="left:66.39%;top:38.62%;width:4.54%;height:5.12%;--d:0.52s;--t:4.6s;--dx:4px;--dy:-8px;--r:3deg">
+<img class="petal" src="Image/hero/petal01.webp" alt="" style="left:47.31%;top:59.00%;width:5.09%;height:5.12%;--d:0.59s;--t:4.2s;--dx:0px;--dy:-9px;--r:-5deg">
+<img class="petal" src="Image/hero/petal02.webp" alt="" style="left:59.07%;top:69.38%;width:4.81%;height:5.12%;--d:0.11s;--t:4.4s;--dx:-2px;--dy:11px;--r:-30deg">
+<img class="petal" src="Image/hero/petal03.webp" alt="" style="left:2.87%;top:74.12%;width:4.63%;height:5.12%;--d:0.36s;--t:6.5s;--dx:13px;--dy:5px;--r:-8deg">
+<img class="petal" src="Image/hero/petal04.webp" alt="" style="left:40.09%;top:77.75%;width:5.00%;height:6.00%;--d:1.56s;--t:4.2s;--dx:10px;--dy:-2px;--r:-28deg">
+<img class="petal" src="Image/hero/petal05.webp" alt="" style="left:54.44%;top:82.00%;width:3.24%;height:3.12%;--d:0.19s;--t:5.2s;--dx:9px;--dy:-5px;--r:7deg">
+<img class="petal" src="Image/hero/petal06.webp" alt="" style="left:31.20%;top:87.00%;width:4.63%;height:4.62%;--d:1.02s;--t:5.5s;--dx:1px;--dy:-8px;--r:-35deg">
+<img class="petal" src="Image/hero/petal07.webp" alt="" style="left:0.00%;top:87.75%;width:4.35%;height:5.38%;--d:0.33s;--t:6.7s;--dx:-2px;--dy:-2px;--r:7deg">
+<img class="petal" src="Image/hero/petal08.webp" alt="" style="left:50.19%;top:87.75%;width:4.63%;height:5.00%;--d:0.73s;--t:5.2s;--dx:8px;--dy:8px;--r:-20deg">
+<img class="petal" src="Image/hero/petal09.webp" alt="" style="left:8.15%;top:93.62%;width:5.46%;height:4.88%;--d:0.92s;--t:6.1s;--dx:11px;--dy:9px;--r:-17deg">
+<img class="petal" src="Image/hero/petal10.webp" alt="" style="left:83.52%;top:93.75%;width:5.09%;height:5.38%;--d:1.57s;--t:4.5s;--dx:-2px;--dy:10px;--r:-28deg">
+<img class="petal" src="Image/hero/petal11.webp" alt="" style="left:92.59%;top:97.88%;width:3.98%;height:4.62%;--d:0.78s;--t:4.2s;--dx:5px;--dy:10px;--r:6deg">
+    </div>
+    <div class="hero-art hero-bot" aria-hidden="true">
+<img class="leaf leafL" src="Image/hero/leafL.webp" alt="" style="left:0.00%;top:5.37%;width:26.11%;height:94.63%">
+<img class="leaf leafR" src="Image/hero/leafR.webp" alt="" style="left:65.65%;top:16.12%;width:34.35%;height:83.88%">
+<img class="petal" src="Image/hero/petal12.webp" alt="" style="left:90.00%;top:8.21%;width:4.44%;height:6.42%;--d:1.40s;--t:5.3s;--dx:5px;--dy:5px;--r:6deg">
+<img class="petal" src="Image/hero/petal13.webp" alt="" style="left:12.41%;top:18.06%;width:5.09%;height:7.16%;--d:0.73s;--t:7.4s;--dx:12px;--dy:2px;--r:13deg">
+<img class="petal" src="Image/hero/petal14.webp" alt="" style="left:83.15%;top:30.30%;width:4.81%;height:6.72%;--d:0.10s;--t:6.8s;--dx:4px;--dy:16px;--r:26deg">
+<img class="petal" src="Image/hero/petal15.webp" alt="" style="left:9.54%;top:37.61%;width:5.09%;height:7.16%;--d:0.46s;--t:5.5s;--dx:5px;--dy:-9px;--r:-3deg">
+<img class="petal" src="Image/hero/petal16.webp" alt="" style="left:15.19%;top:79.40%;width:5.19%;height:6.72%;--d:0.27s;--t:4.5s;--dx:-12px;--dy:10px;--r:-30deg">
+    </div>
     <div class="sunrays"></div>
     <div class="mandap-image-bg" id="mandap-bg"></div>
     <svg class="mandap-arch" viewBox="0 0 600 300" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2822,6 +2888,15 @@
       const url = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mrunmayi+%26+Jaymin+Wedding&dates=20270228T053000Z/20270228T093000Z&details=The+Wedding+of+Mrunmayi+%26+Jaymin&location=Nova+House,+MiraRoad,+Mumbai`;
       window.open(url, '_blank');
     }
+
+    // Animated hero: play layers when the hero scrolls into view
+    (function () {
+      const s = document.getElementById('mandap-section');
+      const go = () => s.classList.add('play');
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver((e, o) => { if (e[0].isIntersecting) { go(); o.disconnect(); } }, { threshold: 0.25 }).observe(s);
+      } else go();
+    })();
     const hero = document.querySelector('#mandap-section');
 
     hero.addEventListener('mousemove', (e) => {
@@ -3085,23 +3160,22 @@
         if (D[k]) reg(el, D[k], el.classList.contains('section-label'));
       });
       Object.entries(SP).forEach(([selector, tr]) => reg(document.querySelector(selector), tr));
-      const params = new URLSearchParams(window.location.search);
       const eventType = params.get('event') || 'wedding';
-      const guestName = params.get('guest') || '';
-      const urlLang = params.get('lang');
+const guestName = params.get('guest') || '';
+const urlLang = params.get('lang');
       // const qs = new URLSearchParams(location.search);
       // const guest = qs.get('guest');
       const guestInput = document.getElementById('wa-name');
-      if (guestInput && guestName) {
-        guestInput.value = guestName.trim();
-      }
-      const weddingRSVP = document.getElementById('wa-rsvp');
-      const engagementRSVP = document.getElementById('old-rsvp');
+if (guestInput && guestName) {
+    guestInput.value = guestName.trim();
+}
+     const weddingRSVP = document.getElementById('wa-rsvp');
+const engagementRSVP = document.getElementById('old-rsvp');
 
-      if (eventType === 'engagement') {
-        if (weddingRSVP) weddingRSVP.style.display = 'none';
-        if (engagementRSVP) engagementRSVP.style.display = 'block';
-      }
+if (eventType === 'engagement') {
+    if (weddingRSVP) weddingRSVP.style.display = 'none';
+    if (engagementRSVP) engagementRSVP.style.display = 'block';
+}
 
       const switcher = document.getElementById('lang-switch');
 
@@ -3117,20 +3191,20 @@
           });
         });
       }
+      const params = new URLSearchParams(window.location.search);
+let savedLang = 'en';
 
-      let savedLang = 'en';
+try {
+    savedLang = localStorage.getItem('lang') || 'en';
+} catch (e) {}
 
-      try {
-        savedLang = localStorage.getItem('lang') || 'en';
-      } catch (e) { }
+const selectedLang = urlLang || savedLang;
 
-      const selectedLang = urlLang || savedLang;
-
-      setLang(
-        ['en', 'gu', 'mr'].includes(selectedLang)
-          ? selectedLang
-          : 'en'
-      );
+setLang(
+    ['en', 'gu', 'mr'].includes(selectedLang)
+        ? selectedLang
+        : 'en'
+);
     })();
 
   </script>
