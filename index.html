@@ -3294,45 +3294,27 @@
         console.log('Music will start after user interaction.');
       }
     }
-    document.addEventListener("DOMContentLoaded", function () {
+ document.addEventListener("DOMContentLoaded", function () {
+  const params = new URLSearchParams(window.location.search);
+  const isEngagement = params.get("event") === "engagement";
 
-      const params = new URLSearchParams(window.location.search);
+  const weddingRSVP =
+    "https://docs.google.com/forms/d/e/1FAIpQLSd4O1plV6gYACDEmiedJ4I46mNAuRPICgluNCfdh8-Zf67QvA/viewform";
+  const engagementRSVP =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfzJPy18RQCo_JgxnjaVc240By4WxmzdVVdt599pucrG4e7yQ/viewform";
 
-      const isEngagement = params.get("event") === "engagement";
+  const rsvpButton = document.getElementById("rsvp-btn");
+  const engagementCard = document.getElementById("engagement-event");
 
-      // New wedding RSVP form
-      const weddingRSVP =
-        "https://docs.google.com/forms/d/e/1FAIpQLSd4O1plV6gYACDEmiedJ4I46mNAuRPICgluNCfdh8-Zf67QvA/viewform?usp=publish-editor";
+  if (rsvpButton) {
+    rsvpButton.href = isEngagement ? engagementRSVP : weddingRSVP;
+  }
+  if (engagementCard) {
+    engagementCard.style.display = isEngagement ? "block" : "none";
+  }
+});
 
-      // Replace this with your OLD engagement RSVP form link
-      const engagementRSVP = "https://docs.google.com/forms/d/e/1FAIpQLSfzJPy18RQCo_JgxnjaVc240By4WxmzdVVdt599pucrG4e7yQ/viewform?usp=publish-editor";
-
-      const rsvpButton = document.getElementById("engagement-rsvp-btn");
-      const engagementCard = document.getElementById("engagement-event");
-
-      if (isEngagement) {
-
-        // Show engagement event
-        if (engagementCard) {
-          engagementCard.style.display = "block";
-        }
-
-        // Old engagement RSVP
-        rsvpButton.href = engagementRSVP;
-
-      } else {
-
-        // Hide engagement event
-        if (engagementCard) {
-          engagementCard.style.display = "none";
-        }
-
-        // New wedding RSVP
-        rsvpButton.href = weddingRSVP;
-      }
-
-    });
-    const WA_NUMBER = '918369625523';                       // <- your WhatsApp number
+                          
     let LANG = 'en';
 
     /* strings: en / gu / mr */
